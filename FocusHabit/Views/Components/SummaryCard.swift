@@ -56,28 +56,28 @@ struct SummaryCardsGrid: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 12) {
             SummaryCard(
-                title: "总打卡",
+                title: L10n.totalCheckIns,
                 value: "\(totalCheckIns)",
                 icon: "checkmark.circle.fill",
                 color: .green
             )
             
             SummaryCard(
-                title: "今日进度",
+                title: L10n.todayProgress,
                 value: todayProgress,
                 icon: "sun.max.fill",
                 color: .orange
             )
             
             SummaryCard(
-                title: "最长连续",
-                value: "\(longestStreak) 天",
+                title: L10n.longestStreak,
+                value: L10n.streakDays(longestStreak),
                 icon: "flame.fill",
                 color: .red
             )
             
             SummaryCard(
-                title: "本周完成率",
+                title: L10n.weeklyCompletion,
                 value: "\(weeklyRate)%",
                 icon: "chart.line.uptrend.xyaxis",
                 color: .blue

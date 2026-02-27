@@ -29,11 +29,11 @@ struct DataManagementView: View {
         Form {
             // 数据概览
             Section {
-                DataRow(icon: "checkmark.circle.fill", color: .blue, title: "习惯数量", value: "\(habitCount)")
-                DataRow(icon: "calendar.badge.checkmark", color: .green, title: "打卡记录", value: "\(logCount)")
-                DataRow(icon: "timer", color: .orange, title: "专注记录", value: "\(sessionCount)")
+                DataRow(icon: "checkmark.circle.fill", color: .blue, title: L10n.habitCountLabel, value: "\(habitCount)")
+                DataRow(icon: "calendar.badge.checkmark", color: .green, title: L10n.checkInRecords, value: "\(logCount)")
+                DataRow(icon: "timer", color: .orange, title: L10n.focusRecords, value: "\(sessionCount)")
             } header: {
-                Text("数据概览")
+                Text(L10n.dataOverview)
             }
             
             // 导出数据
@@ -41,13 +41,13 @@ struct DataManagementView: View {
                 Button {
                     exportData()
                 } label: {
-                    Label("导出数据", systemImage: "square.and.arrow.up")
+                    Label(L10n.exportData, systemImage: "square.and.arrow.up")
                 }
                 .disabled(habitCount == 0 && logCount == 0)
             } header: {
-                Text("数据导出")
+                Text(L10n.dataExport)
             } footer: {
-                Text("导出为 JSON 格式，可用于备份或迁移")
+                Text(L10n.dataExportDesc)
             }
             
             // 危险操作
@@ -56,43 +56,43 @@ struct DataManagementView: View {
                 Button(role: .destructive) {
                     showingResetSettingsAlert = true
                 } label: {
-                    Label("重置设置", systemImage: "gearshape.arrow.triangle.2.circlepath")
+                    Label(L10n.resetSettings, systemImage: "gearshape.arrow.triangle.2.circlepath")
                 }
                 
                 // 清除所有数据
                 Button(role: .destructive) {
                     showingResetAlert = true
                 } label: {
-                    Label("清除所有数据", systemImage: "trash.fill")
+                    Label(L10n.clearAllData, systemImage: "trash.fill")
                 }
             } header: {
-                Text("危险操作")
+                Text(L10n.dangerZone)
             } footer: {
-                Text("清除数据后无法恢复，请谨慎操作")
+                Text(L10n.dangerZoneDesc)
             }
         }
-        .navigationTitle("数据管理")
+        .navigationTitle(L10n.dataManagement)
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingExportSheet) {
             if let url = exportedFileURL {
                 ShareSheet(items: [url])
             }
         }
-        .alert("重置设置", isPresented: $showingResetSettingsAlert) {
-            Button("取消", role: .cancel) {}
-            Button("重置", role: .destructive) {
+        .alert(L10n.resetSettings, isPresented: $showingResetSettingsAlert) {
+            Button(L10n.cancel, role: .cancel) {}
+            Button(L10n.reset, role: .destructive) {
                 AppSettings.shared.resetToDefaults()
             }
         } message: {
-            Text("这将把所有设置恢复为默认值，是否继续？")
+            Text(L10n.resetSettingsConfirm)
         }
-        .alert("清除所有数据", isPresented: $showingResetAlert) {
-            Button("取消", role: .cancel) {}
-            Button("清除", role: .destructive) {
+        .alert(L10n.clearAllData, isPresented: $showingResetAlert) {
+            Button(L10n.cancel, role: .cancel) {}
+            Button(L10n.clear, role: .destructive) {
                 clearAllData()
             }
         } message: {
-            Text("这将删除所有习惯、打卡记录和专注记录，此操作不可撤销！")
+            Text(L10n.clearDataConfirm)
         }
     }
     

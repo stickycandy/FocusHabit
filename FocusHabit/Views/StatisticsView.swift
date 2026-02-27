@@ -60,7 +60,7 @@ struct StatisticsView: View {
                 }
                 .padding()
             }
-            .navigationTitle("数据统计")
+            .navigationTitle(L10n.statisticsTitle)
             .background(Color(.systemGroupedBackground))
         }
     }

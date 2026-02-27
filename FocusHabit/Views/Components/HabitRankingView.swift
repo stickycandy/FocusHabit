@@ -40,7 +40,7 @@ struct HabitRankingView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // 标题
-            Text("习惯排行")
+            Text(L10n.habitRanking)
                 .font(.headline)
             
             if rankingItems.isEmpty {
@@ -49,7 +49,7 @@ struct HabitRankingView: View {
                     Image(systemName: "chart.bar.doc.horizontal")
                         .font(.title)
                         .foregroundStyle(.secondary)
-                    Text("暂无习惯数据")
+                    Text(L10n.noHabitData)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -131,7 +131,7 @@ private struct RankingRow: View {
                     Image(systemName: "flame.fill")
                         .font(.caption2)
                         .foregroundStyle(.orange)
-                    Text("连续 \(item.streak) 天")
+                    Text(L10n.consecutiveDays(item.streak))
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                 }
@@ -144,7 +144,7 @@ private struct RankingRow: View {
                 Text("\(item.count)")
                     .font(.title3)
                     .fontWeight(.bold)
-                Text("次")
+                Text(L10n.times)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }

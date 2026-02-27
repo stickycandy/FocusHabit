@@ -17,22 +17,21 @@ struct HabitListView: View {
     @State private var showingAddSheet = false
     @State private var showCheckInAnimation = false
     
-    /// 今日日期格式化
+    private let languageManager = LanguageManager.shared
+    
+    /// 今日问候语
     private var todayGreeting: String {
         let hour = Calendar.current.component(.hour, from: Date())
         switch hour {
-        case 5..<12: return "早上好 ☀️"
-        case 12..<18: return "下午好 🌤️"
-        default: return "晚上好 🌙"
+        case 5..<12: return L10n.greetingMorning
+        case 12..<18: return L10n.greetingAfternoon
+        default: return L10n.greetingEvening
         }
     }
     
     /// 今日日期
     private var todayDate: String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "zh_CN")
-        formatter.dateFormat = "M月d日 EEEE"
-        return formatter.string(from: Date())
+        languageManager.formatDate(Date(), style: .dayWithWeekday)
     }
     
     var body: some View {
@@ -69,18 +68,18 @@ struct HabitListView: View {
                 .foregroundStyle(.green.opacity(0.6))
             
             VStack(spacing: 8) {
-                Text("开始你的习惯之旅")
+                Text(L10n.emptyStateTitle)
                     .font(.title2)
                     .fontWeight(.semibold)
                 
-                Text("点击右上角 + 创建你的第一个习惯")
+                Text(L10n.emptyStateSubtitle)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
             
             Button(action: { showingAddSheet = true }) {
-                Label("创建习惯", systemImage: "plus")
+                Label(L10n.createHabit, systemImage: "plus")
                     .font(.headline)
                     .padding(.horizontal, 24)
                     .padding(.vertical, 12)
@@ -101,7 +100,7 @@ struct HabitListView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(todayDate)
                             .font(.headline)
-                        Text("共 \(habits.count) 个习惯")
+                        Text(L10n.habitCount(habits.count))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -145,7 +144,7 @@ struct HabitListView: View {
             HStack {
                 Image(systemName: "checkmark.circle.fill")
                     .foregroundStyle(.green)
-                Text("打卡成功！")
+                Text(L10n.checkInSuccess)
                     .fontWeight(.medium)
             }
             .padding()

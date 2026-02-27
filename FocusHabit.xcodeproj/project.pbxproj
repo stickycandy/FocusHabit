@@ -36,6 +36,9 @@
 		A1000038 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000038 /* CircularProgressView.swift */; };
 		A1000040 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000040 /* Color+Hex.swift */; };
 		A1000041 /* AppIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000041 /* AppIconGenerator.swift */; };
+		A1000050 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000050 /* LanguageManager.swift */; };
+		A1000051 /* LanguageSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000051 /* LanguageSettingsView.swift */; };
+		A1000060 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2000060 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,11 @@
 		A2000038 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		A2000040 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		A2000041 /* AppIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconGenerator.swift; sourceTree = "<group>"; };
+		A2000050 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		A2000051 /* LanguageSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingsView.swift; sourceTree = "<group>"; };
+		A2000061 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000062 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Resources/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000063 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Resources/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -89,6 +97,7 @@
 				A3000003 /* Models */,
 				A3000004 /* Views */,
 				A2000003 /* Assets.xcassets */,
+				A2000060 /* Localizable.strings */,
 			);
 			path = FocusHabit;
 			sourceTree = "<group>";
@@ -109,6 +118,7 @@
 				A2000006 /* FocusSession.swift */,
 				A2000007 /* AppSettings.swift */,
 				A2000008 /* FocusTimerManager.swift */,
+				A2000050 /* LanguageManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,6 +145,7 @@
 				A2000022 /* FocusSettingsView.swift */,
 				A2000023 /* DataManagementView.swift */,
 				A2000024 /* AboutView.swift */,
+				A2000051 /* LanguageSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = A3000000;
 			productRefGroup = A3000002 /* Products */;
@@ -250,6 +262,8 @@
 				A1000038 /* CircularProgressView.swift in Sources */,
 				A1000040 /* Color+Hex.swift in Sources */,
 				A1000041 /* AppIconGenerator.swift in Sources */,
+				A1000050 /* LanguageManager.swift in Sources */,
+				A1000051 /* LanguageSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1000003 /* Assets.xcassets in Resources */,
+				A1000060 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +412,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin PBXVariantGroup section */
+		A2000060 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2000061 /* en */,
+				A2000062 /* zh-Hans */,
+				A2000063 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 	};
 	rootObject = A4000003 /* Project object */;
 }

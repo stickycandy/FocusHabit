@@ -18,15 +18,15 @@ enum ThemeColor: String, CaseIterable, Identifiable {
     
     var id: String { rawValue }
     
-    /// 颜色名称（用于显示）
+    /// 颜色名称（用于显示，本地化）
     var displayName: String {
         switch self {
-        case .oceanBlue: return "海洋蓝"
-        case .vitalOrange: return "活力橙"
-        case .freshGreen: return "清新绿"
-        case .romanticPurple: return "浪漫紫"
-        case .warmRed: return "温暖红"
-        case .elegantBlack: return "优雅黑"
+        case .oceanBlue: return L10n.colorOceanBlue
+        case .vitalOrange: return L10n.colorVitalOrange
+        case .freshGreen: return L10n.colorFreshGreen
+        case .romanticPurple: return L10n.colorRomanticPurple
+        case .warmRed: return L10n.colorWarmRed
+        case .elegantBlack: return L10n.colorElegantBlack
         }
     }
     

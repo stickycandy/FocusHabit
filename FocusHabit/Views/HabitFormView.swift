@@ -50,7 +50,7 @@ struct HabitFormView: View {
                                 .background(Color(hex: color))
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                             
-                            Text(name.isEmpty ? "习惯名称" : name)
+                            Text(name.isEmpty ? L10n.habitName : name)
                                 .font(.headline)
                                 .foregroundStyle(name.isEmpty ? .secondary : .primary)
                         }
@@ -61,11 +61,11 @@ struct HabitFormView: View {
                 }
                 
                 // 名称输入
-                Section("基本信息") {
-                    TextField("习惯名称", text: $name)
+                Section(L10n.basicInfo) {
+                    TextField(L10n.habitNamePlaceholder, text: $name)
                         .font(.body)
                     
-                    Stepper("每日目标: \(targetCount) 次", value: $targetCount, in: 1...10)
+                    Stepper(L10n.dailyTarget(targetCount), value: $targetCount, in: 1...10)
                 }
                 
                 // 图标选择
@@ -75,7 +75,7 @@ struct HabitFormView: View {
                             .padding(.vertical, 8)
                     } label: {
                         HStack {
-                            Text("选择图标")
+                            Text(L10n.selectIcon)
                             Spacer()
                             Image(systemName: icon)
                                 .foregroundStyle(Color(hex: color))
@@ -98,37 +98,37 @@ struct HabitFormView: View {
                         } label: {
                             HStack {
                                 Spacer()
-                                Label("删除习惯", systemImage: "trash")
+                                Label(L10n.deleteHabit, systemImage: "trash")
                                 Spacer()
                             }
                         }
                     }
                 }
             }
-            .navigationTitle(isEditing ? "编辑习惯" : "新建习惯")
+            .navigationTitle(isEditing ? L10n.editHabit : L10n.newHabit)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("取消") {
+                    Button(L10n.cancel) {
                         dismiss()
                     }
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("保存") {
+                    Button(L10n.save) {
                         save()
                     }
                     .fontWeight(.semibold)
                     .disabled(!isValid)
                 }
             }
-            .alert("删除习惯", isPresented: $showingDeleteAlert) {
-                Button("取消", role: .cancel) {}
-                Button("删除", role: .destructive) {
+            .alert(L10n.deleteHabit, isPresented: $showingDeleteAlert) {
+                Button(L10n.cancel, role: .cancel) {}
+                Button(L10n.delete, role: .destructive) {
                     delete()
                 }
             } message: {
-                Text("删除后，该习惯的所有打卡记录也将被删除。此操作无法撤销。")
+                Text(L10n.deleteHabitConfirm)
             }
             .onAppear {
                 loadHabitData()

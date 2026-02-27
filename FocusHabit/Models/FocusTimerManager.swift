@@ -11,9 +11,18 @@ import UserNotifications
 
 /// 计时器阶段
 enum TimerPhase: String {
-    case focus = "专注"
-    case shortBreak = "短休息"
-    case longBreak = "长休息"
+    case focus = "focus"
+    case shortBreak = "shortBreak"
+    case longBreak = "longBreak"
+    
+    /// 本地化显示名称
+    var displayName: String {
+        switch self {
+        case .focus: return L10n.focusing
+        case .shortBreak: return L10n.shortBreak
+        case .longBreak: return L10n.longBreak
+        }
+    }
     
     var color: Color {
         switch self {
@@ -98,10 +107,11 @@ final class FocusTimerManager {
     var todayFocusDisplay: String {
         let hours = todayFocusSeconds / 3600
         let minutes = (todayFocusSeconds % 3600) / 60
+        let manager = LanguageManager.shared
         if hours > 0 {
-            return "\(hours)小时\(minutes)分钟"
+            return manager.localizedString("focus_hours_minutes", hours, minutes)
         } else {
-            return "\(minutes)分钟"
+            return manager.localizedString("focus_minutes_only", minutes)
         }
     }
     
@@ -265,14 +275,15 @@ final class FocusTimerManager {
     private func sendCompletionNotification() {
         guard settings.notificationsEnabled else { return }
         
+        let manager = LanguageManager.shared
         let content = UNMutableNotificationContent()
-        content.title = "\(currentPhase.rawValue)完成！"
+        content.title = manager.localizedString("phase_completed_title", currentPhase.displayName)
         
         switch currentPhase {
         case .focus:
-            content.body = "干得好！休息一下吧 ☕️"
+            content.body = manager.localizedString("focus_completed_body")
         case .shortBreak, .longBreak:
-            content.body = "休息结束，继续专注吧 💪"
+            content.body = manager.localizedString("break_completed_body")
         }
         
         if settings.soundEnabled {

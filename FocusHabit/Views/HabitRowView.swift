@@ -33,6 +33,16 @@ struct HabitRowView: View {
         }.count
     }
     
+    /// 今日完成状态文本
+    private var completionStatusText: String {
+        let manager = LanguageManager.shared
+        if isCompletedToday {
+            return manager.localizedString("today_completed")
+        } else {
+            return manager.localizedString("today_not_completed")
+        }
+    }
+    
     var body: some View {
         HStack(spacing: 16) {
             // 图标
@@ -50,11 +60,11 @@ struct HabitRowView: View {
                 
                 // 今日进度
                 if habit.targetCount > 1 {
-                    Text("\(todayCompletionCount)/\(habit.targetCount) 次")
+                    Text(L10n.completionProgress(todayCompletionCount, habit.targetCount))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 } else {
-                    Text(isCompletedToday ? "今日已完成" : "今日未完成")
+                    Text(completionStatusText)
                         .font(.caption)
                         .foregroundStyle(isCompletedToday ? Color(hex: habit.color) : .secondary)
                 }

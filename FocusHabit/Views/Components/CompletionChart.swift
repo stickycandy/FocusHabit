@@ -17,7 +17,7 @@ struct ChartDataPoint: Identifiable {
     var dayLabel: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "E"  // 周几
-        formatter.locale = Locale(identifier: "zh_CN")
+        formatter.locale = LanguageManager.shared.currentLanguage.locale
         return formatter.string(from: date)
     }
     
@@ -29,14 +29,21 @@ struct ChartDataPoint: Identifiable {
 }
 
 /// 时间范围枚举
-enum ChartTimeRange: String, CaseIterable {
-    case week = "7天"
-    case month = "30天"
+enum ChartTimeRange: CaseIterable {
+    case week
+    case month
     
     var days: Int {
         switch self {
         case .week: return 7
         case .month: return 30
+        }
+    }
+    
+    var displayName: String {
+        switch self {
+        case .week: return L10n.chartRangeWeek
+        case .month: return L10n.chartRangeMonth
         }
     }
 }
@@ -62,14 +69,14 @@ struct CompletionChart: View {
         VStack(alignment: .leading, spacing: 16) {
             // 标题和时间范围选择
             HStack {
-                Text("打卡趋势")
+                Text(L10n.checkInTrend)
                     .font(.headline)
                 
                 Spacer()
                 
-                Picker("时间范围", selection: $selectedRange) {
+                Picker(L10n.chartTimeRange, selection: $selectedRange) {
                     ForEach(ChartTimeRange.allCases, id: \.self) { range in
-                        Text(range.rawValue).tag(range)
+                        Text(range.displayName).tag(range)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -79,8 +86,8 @@ struct CompletionChart: View {
             // 图表
             Chart(chartData) { dataPoint in
                 BarMark(
-                    x: .value("日期", dataPoint.date, unit: .day),
-                    y: .value("次数", dataPoint.count)
+                    x: .value(L10n.chartAxisDate, dataPoint.date, unit: .day),
+                    y: .value(L10n.chartAxisCount, dataPoint.count)
                 )
                 .foregroundStyle(
                     LinearGradient(
@@ -131,13 +138,13 @@ struct CompletionChart: View {
                 Circle()
                     .fill(.blue)
                     .frame(width: 8, height: 8)
-                Text("每日打卡次数")
+                Text(L10n.dailyCheckIns)
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 
                 Spacer()
                 
-                Text("共 \(chartData.reduce(0) { $0 + $1.count }) 次")
+                Text(L10n.totalTimes(chartData.reduce(0) { $0 + $1.count }))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -150,7 +157,7 @@ struct CompletionChart: View {
     private func weekdayLabel(for date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "E"
-        formatter.locale = Locale(identifier: "zh_CN")
+        formatter.locale = LanguageManager.shared.currentLanguage.locale
         return formatter.string(from: date)
     }
     

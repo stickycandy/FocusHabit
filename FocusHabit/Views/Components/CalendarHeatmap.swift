@@ -14,7 +14,13 @@ struct CalendarHeatmap: View {
     
     private let calendar = Calendar.current
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 7)
-    private let weekdaySymbols = ["日", "一", "二", "三", "四", "五", "六"]
+    
+    /// 本地化的星期符号
+    private var weekdaySymbols: [String] {
+        let formatter = DateFormatter()
+        formatter.locale = LanguageManager.shared.currentLanguage.locale
+        return formatter.veryShortWeekdaySymbols
+    }
     
     /// 当月打卡数据
     private var monthlyData: [Int: Int] {
@@ -37,8 +43,14 @@ struct CalendarHeatmap: View {
     /// 月份标题
     private var monthTitle: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年M月"
-        formatter.locale = Locale(identifier: "zh_CN")
+        let language = LanguageManager.shared.currentLanguage
+        formatter.locale = language.locale
+        switch language {
+        case .zhHans, .zhHant:
+            formatter.dateFormat = "yyyy年M月"
+        case .en:
+            formatter.dateFormat = "MMMM yyyy"
+        }
         return formatter.string(from: displayedMonth)
     }
     
@@ -46,7 +58,7 @@ struct CalendarHeatmap: View {
         VStack(alignment: .leading, spacing: 16) {
             // 标题和月份导航
             HStack {
-                Text("打卡日历")
+                Text(L10n.checkInCalendar)
                     .font(.headline)
                 
                 Spacer()
@@ -107,7 +119,7 @@ struct CalendarHeatmap: View {
             
             // 图例
             HStack {
-                Text("少")
+                Text(L10n.less)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                 
@@ -117,14 +129,14 @@ struct CalendarHeatmap: View {
                         .frame(width: 12, height: 12)
                 }
                 
-                Text("多")
+                Text(L10n.more)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                 
                 Spacer()
                 
                 let totalCount = monthlyData.values.reduce(0, +)
-                Text("本月 \(totalCount) 次")
+                Text(L10n.monthlyTotal(totalCount))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }

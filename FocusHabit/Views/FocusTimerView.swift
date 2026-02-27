@@ -52,18 +52,18 @@ struct FocusTimerView: View {
                 // 今日统计
                 todayStats
             }
-            .navigationTitle("专注")
+            .navigationTitle(L10n.focusTitle)
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showingHabitPicker) {
                 habitPickerSheet
             }
-            .alert("停止专注？", isPresented: $showingStopAlert) {
-                Button("继续专注", role: .cancel) {}
-                Button("停止", role: .destructive) {
+            .alert(L10n.stopFocusAlert, isPresented: $showingStopAlert) {
+                Button(L10n.continueFocusing, role: .cancel) {}
+                Button(L10n.stopFocus, role: .destructive) {
                     timerManager.stop()
                 }
             } message: {
-                Text("当前专注进度将不会被保存")
+                Text(L10n.focusProgressNotSaved)
             }
         }
     }
@@ -88,7 +88,7 @@ struct FocusTimerView: View {
                     .monospacedDigit()
                 
                 // 阶段名称
-                Text(timerManager.currentPhase.rawValue)
+                Text(timerManager.currentPhase.displayName)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
@@ -131,7 +131,7 @@ struct FocusTimerView: View {
                     Image(systemName: "link")
                         .foregroundStyle(.secondary)
                     
-                    Text("关联习惯")
+                    Text(L10n.linkedHabit)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     
@@ -158,7 +158,7 @@ struct FocusTimerView: View {
             case .idle:
                 // 开始按钮
                 primaryButton(
-                    title: "开始专注",
+                    title: L10n.startFocus,
                     icon: "play.fill",
                     color: timerManager.currentPhase.color
                 ) {
@@ -167,19 +167,19 @@ struct FocusTimerView: View {
                 
             case .running:
                 // 暂停按钮
-                secondaryButton(title: "暂停", icon: "pause.fill") {
+                secondaryButton(title: L10n.pauseFocus, icon: "pause.fill") {
                     timerManager.pause()
                 }
                 
                 // 停止按钮
-                secondaryButton(title: "停止", icon: "stop.fill") {
+                secondaryButton(title: L10n.stopFocus, icon: "stop.fill") {
                     showingStopAlert = true
                 }
                 
             case .paused:
                 // 继续按钮
                 primaryButton(
-                    title: "继续",
+                    title: L10n.continueFocus,
                     icon: "play.fill",
                     color: timerManager.currentPhase.color
                 ) {
@@ -187,7 +187,7 @@ struct FocusTimerView: View {
                 }
                 
                 // 停止按钮
-                secondaryButton(title: "停止", icon: "stop.fill") {
+                secondaryButton(title: L10n.stopFocus, icon: "stop.fill") {
                     timerManager.stop()
                 }
                 
@@ -203,7 +203,7 @@ struct FocusTimerView: View {
                 }
                 
                 // 跳过按钮
-                secondaryButton(title: "跳过", icon: "forward.fill") {
+                secondaryButton(title: L10n.skipBreak, icon: "forward.fill") {
                     timerManager.skip()
                 }
             }
@@ -213,9 +213,9 @@ struct FocusTimerView: View {
     private var nextPhaseTitle: String {
         switch timerManager.currentPhase {
         case .focus:
-            return "开始休息"
+            return L10n.startBreak
         case .shortBreak, .longBreak:
-            return "开始专注"
+            return L10n.startFocus
         }
     }
     
@@ -255,7 +255,7 @@ struct FocusTimerView: View {
         HStack {
             StatItem(
                 icon: "clock.fill",
-                title: "今日专注",
+                title: L10n.todayFocus,
                 value: timerManager.todayFocusDisplay
             )
             
@@ -264,7 +264,7 @@ struct FocusTimerView: View {
             
             StatItem(
                 icon: "flame.fill",
-                title: "完成番茄",
+                title: L10n.completedPomodoros,
                 value: "\(timerManager.completedFocusSessions)"
             )
         }
@@ -305,11 +305,11 @@ struct FocusTimerView: View {
                     }
                 }
             }
-            .navigationTitle("选择习惯")
+            .navigationTitle(L10n.selectHabit)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("取消") {
+                    Button(L10n.cancel) {
                         showingHabitPicker = false
                     }
                 }

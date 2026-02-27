@@ -10,6 +10,7 @@ import SwiftUI
 /// 设置主页面
 struct SettingsView: View {
     @Bindable private var settings = AppSettings.shared
+    @Bindable private var languageManager = LanguageManager.shared
     
     var body: some View {
         NavigationStack {
@@ -22,8 +23,8 @@ struct SettingsView: View {
                         SettingsRow(
                             icon: "bell.fill",
                             color: .red,
-                            title: "通知设置",
-                            subtitle: settings.notificationsEnabled ? "已开启" : "已关闭"
+                            title: L10n.notificationSettings,
+                            subtitle: settings.notificationsEnabled ? L10n.enabled : L10n.disabled
                         )
                     }
                 }
@@ -36,8 +37,22 @@ struct SettingsView: View {
                         SettingsRow(
                             icon: "timer",
                             color: .orange,
-                            title: "专注设置",
-                            subtitle: "\(settings.focusDuration) 分钟"
+                            title: L10n.focusSettings,
+                            subtitle: L10n.minutesFormat(settings.focusDuration)
+                        )
+                    }
+                }
+                
+                // 语言设置
+                Section {
+                    NavigationLink {
+                        LanguageSettingsView()
+                    } label: {
+                        SettingsRow(
+                            icon: "globe",
+                            color: .purple,
+                            title: L10n.languageSettings,
+                            subtitle: languageManager.currentLanguage.localizedName
                         )
                     }
                 }
@@ -50,8 +65,8 @@ struct SettingsView: View {
                         SettingsRow(
                             icon: "externaldrive.fill",
                             color: .blue,
-                            title: "数据管理",
-                            subtitle: "导出、备份、重置"
+                            title: L10n.dataManagement,
+                            subtitle: L10n.dataManagementSubtitle
                         )
                     }
                 }
@@ -64,13 +79,13 @@ struct SettingsView: View {
                         SettingsRow(
                             icon: "info.circle.fill",
                             color: .gray,
-                            title: "关于",
-                            subtitle: "版本信息"
+                            title: L10n.about,
+                            subtitle: L10n.versionInfo
                         )
                     }
                 }
             }
-            .navigationTitle("设置")
+            .navigationTitle(L10n.settings)
         }
     }
 }

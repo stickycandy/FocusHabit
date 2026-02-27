@@ -23,50 +23,50 @@ struct FocusSettingsView: View {
             // 时长设置
             Section {
                 // 专注时长
-                Picker("专注时长", selection: $settings.focusDuration) {
+                Picker(L10n.focusDuration, selection: $settings.focusDuration) {
                     ForEach(focusDurationOptions, id: \.self) { minutes in
-                        Text("\(minutes) 分钟").tag(minutes)
+                        Text(L10n.minutesFormat(minutes)).tag(minutes)
                     }
                 }
                 
                 // 短休息时长
-                Picker("短休息时长", selection: $settings.shortBreakDuration) {
+                Picker(L10n.shortBreakDuration, selection: $settings.shortBreakDuration) {
                     ForEach(breakDurationOptions, id: \.self) { minutes in
-                        Text("\(minutes) 分钟").tag(minutes)
+                        Text(L10n.minutesFormat(minutes)).tag(minutes)
                     }
                 }
                 
                 // 长休息时长
-                Picker("长休息时长", selection: $settings.longBreakDuration) {
+                Picker(L10n.longBreakDuration, selection: $settings.longBreakDuration) {
                     ForEach(breakDurationOptions, id: \.self) { minutes in
-                        Text("\(minutes) 分钟").tag(minutes)
+                        Text(L10n.minutesFormat(minutes)).tag(minutes)
                     }
                 }
             } header: {
-                Text("时长设置")
+                Text(L10n.durationSettings)
             } footer: {
-                Text("番茄工作法建议：专注 25 分钟，短休息 5 分钟")
+                Text(L10n.pomodoroTip)
             }
             
             // 循环设置
             Section {
-                Picker("长休息间隔", selection: $settings.sessionsUntilLongBreak) {
+                Picker(L10n.longBreakInterval, selection: $settings.sessionsUntilLongBreak) {
                     ForEach(sessionsOptions, id: \.self) { count in
-                        Text("\(count) 个番茄钟").tag(count)
+                        Text(L10n.pomodorosFormat(count)).tag(count)
                     }
                 }
             } header: {
-                Text("循环设置")
+                Text(L10n.cycleSettings)
             } footer: {
-                Text("完成设定次数的专注后，进入长休息")
+                Text(L10n.cycleSettingsDesc)
             }
             
             // 自动化设置
             Section {
                 Toggle(isOn: $settings.autoStartBreaks) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("自动开始休息")
-                        Text("专注结束后自动进入休息")
+                        Text(L10n.autoStartBreak)
+                        Text(L10n.autoStartBreakDesc)
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -74,14 +74,14 @@ struct FocusSettingsView: View {
                 
                 Toggle(isOn: $settings.autoStartFocus) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("自动开始专注")
-                        Text("休息结束后自动进入专注")
+                        Text(L10n.autoStartFocus)
+                        Text(L10n.autoStartFocusDesc)
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
                 }
             } header: {
-                Text("自动化")
+                Text(L10n.automation)
             }
             
             // 当前配置预览
@@ -90,7 +90,7 @@ struct FocusSettingsView: View {
                     HStack {
                         Image(systemName: "clock.fill")
                             .foregroundStyle(.orange)
-                        Text("一个完整周期")
+                        Text(L10n.completeCycle)
                             .font(.subheadline)
                             .fontWeight(.medium)
                     }
@@ -136,16 +136,16 @@ struct FocusSettingsView: View {
                     let totalMinutes = settings.focusDuration * settings.sessionsUntilLongBreak +
                                        settings.shortBreakDuration * (settings.sessionsUntilLongBreak - 1) +
                                        settings.longBreakDuration
-                    Text("总时长约 \(totalMinutes) 分钟（\(String(format: "%.1f", Double(totalMinutes) / 60)) 小时）")
+                    Text(L10n.totalDuration(totalMinutes, Double(totalMinutes) / 60))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 8)
             } header: {
-                Text("配置预览")
+                Text(L10n.configPreview)
             }
         }
-        .navigationTitle("专注设置")
+        .navigationTitle(L10n.focusSettings)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

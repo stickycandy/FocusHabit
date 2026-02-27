@@ -48,12 +48,12 @@ struct AboutView: View {
                         .fontWeight(.bold)
                     
                     // 版本信息
-                    Text("版本 \(appVersion) (\(buildNumber))")
+                    Text(L10n.versionFormat(appVersion, buildNumber))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     
                     // 描述
-                    Text("专注习惯养成，用番茄钟提升效率")
+                    Text(L10n.appDescription)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
@@ -64,12 +64,12 @@ struct AboutView: View {
             
             // 功能特性
             Section {
-                FeatureRow(icon: "checkmark.circle.fill", color: .green, title: "习惯追踪", description: "创建和管理每日习惯")
-                FeatureRow(icon: "timer", color: .orange, title: "番茄钟", description: "25/5 分钟专注休息循环")
-                FeatureRow(icon: "chart.bar.fill", color: .blue, title: "数据统计", description: "可视化习惯完成趋势")
-                FeatureRow(icon: "bell.fill", color: .purple, title: "智能提醒", description: "定时推送打卡提醒")
+                FeatureRow(icon: "checkmark.circle.fill", color: .green, title: L10n.featureHabitTracking, description: L10n.featureHabitTrackingDesc)
+                FeatureRow(icon: "timer", color: .orange, title: L10n.featurePomodoro, description: L10n.featurePomodoroDesc)
+                FeatureRow(icon: "chart.bar.fill", color: .blue, title: L10n.featureStatistics, description: L10n.featureStatisticsDesc)
+                FeatureRow(icon: "bell.fill", color: .purple, title: L10n.featureReminder, description: L10n.featureReminderDesc)
             } header: {
-                Text("功能特性")
+                Text(L10n.features)
             }
             
             // 联系方式
@@ -79,21 +79,21 @@ struct AboutView: View {
                 }
                 
                 Link(destination: URL(string: "mailto:liziqiangrui@hotmail.com")!) {
-                    Label("反馈建议", systemImage: "envelope")
+                    Label(L10n.feedback, systemImage: "envelope")
                 }
             } header: {
-                Text("联系我们")
+                Text(L10n.contactUs)
             }
             
             // 版权信息
             Section {
-                Text("© 2026 FocusHabit. All rights reserved.")
+                Text(L10n.copyright)
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
-        .navigationTitle("关于")
+        .navigationTitle(L10n.about)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

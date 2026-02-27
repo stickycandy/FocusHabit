@@ -19,7 +19,7 @@ struct NotificationSettingsView: View {
             Section {
                 // 通知总开关
                 Toggle(isOn: $settings.notificationsEnabled) {
-                    Label("启用通知", systemImage: "bell.fill")
+                    Label(L10n.enableNotifications, systemImage: "bell.fill")
                 }
                 .onChange(of: settings.notificationsEnabled) { _, newValue in
                     if newValue {
@@ -30,68 +30,69 @@ struct NotificationSettingsView: View {
                 // 权限状态
                 if settings.notificationsEnabled {
                     HStack {
-                        Text("权限状态")
+                        Text(L10n.permissionStatus)
                         Spacer()
                         Text(permissionStatusText)
                             .foregroundStyle(permissionStatusColor)
                     }
                 }
             } header: {
-                Text("通知开关")
+                Text(L10n.notificationSwitch)
             } footer: {
-                Text("开启后，应用将在设定的时间提醒您打卡")
+                Text(L10n.notificationSwitchDesc)
             }
             
             if settings.notificationsEnabled && notificationStatus == .authorized {
                 Section {
                     // 每日提醒时间
                     DatePicker(
-                        "每日提醒时间",
+                        L10n.reminderSettings,
                         selection: $settings.dailyReminderTime,
                         displayedComponents: .hourAndMinute
                     )
                     
                     // 提示音
                     Toggle(isOn: $settings.soundEnabled) {
-                        Label("提示音", systemImage: "speaker.wave.2.fill")
+                        Label(L10n.sound, systemImage: "speaker.wave.2.fill")
                     }
                     
                     // 振动
                     Toggle(isOn: $settings.vibrationEnabled) {
-                        Label("振动", systemImage: "iphone.radiowaves.left.and.right")
+                        Label(L10n.vibration, systemImage: "iphone.radiowaves.left.and.right")
                     }
                 } header: {
-                    Text("提醒设置")
+                    Text(L10n.reminderSettings)
                 }
             }
         }
-        .navigationTitle("通知设置")
+        .navigationTitle(L10n.notificationSettings)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             checkNotificationStatus()
         }
-        .alert("需要通知权限", isPresented: $showingPermissionAlert) {
-            Button("去设置") {
+        .alert(L10n.enableNotifications, isPresented: $showingPermissionAlert) {
+            Button(L10n.settings) {
                 openAppSettings()
             }
-            Button("取消", role: .cancel) {
+            Button(L10n.cancel, role: .cancel) {
                 settings.notificationsEnabled = false
             }
         } message: {
-            Text("请在系统设置中开启通知权限，以便接收打卡提醒")
+            Text(L10n.notificationPermissionHint)
         }
     }
     
     // MARK: - 权限状态
     
     private var permissionStatusText: String {
+        let manager = LanguageManager.shared
         switch notificationStatus {
-        case .notDetermined: return "未设置"
-        case .denied: return "已拒绝"
-        case .authorized: return "已授权"
-        case .provisional: return "临时授权"
-        case .ephemeral: return "临时授权"
-        @unknown default: return "未知"
+        case .notDetermined: return manager.localizedString("permission_not_determined")
+        case .denied: return manager.localizedString("permission_denied")
+        case .authorized: return manager.localizedString("permission_authorized")
+        case .provisional: return manager.localizedString("permission_provisional")
+        case .ephemeral: return manager.localizedString("permission_provisional")
+        @unknown default: return manager.localizedString("permission_unknown")
         }
     }
     

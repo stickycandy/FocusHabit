@@ -1,0 +1,188 @@
+/* 
+  Localizable.strings (简体中文)
+  FocusHabit
+*/
+
+// MARK: - 通用
+"settings" = "设置";
+"cancel" = "取消";
+"confirm" = "确认";
+"delete" = "删除";
+"save" = "保存";
+"done" = "完成";
+
+// MARK: - Tab Bar
+"tab_habits" = "习惯";
+"tab_statistics" = "统计";
+"tab_focus" = "专注";
+"tab_settings" = "设置";
+
+// MARK: - 问候语
+"greeting_morning" = "早上好 ☀️";
+"greeting_afternoon" = "下午好 🌤️";
+"greeting_evening" = "晚上好 🌙";
+
+// MARK: - 习惯列表
+"empty_state_title" = "开始你的习惯之旅";
+"empty_state_subtitle" = "点击右上角 + 创建你的第一个习惯";
+"create_habit" = "创建习惯";
+"habit_count" = "共 %d 个习惯";
+"check_in_success" = "打卡成功！";
+"completion_progress" = "%d/%d 次";
+"today_completed" = "今日已完成";
+"today_not_completed" = "今日未完成";
+
+// MARK: - 习惯表单
+"select_icon" = "选择图标";
+"select_color" = "选择颜色";
+"delete_habit" = "删除习惯";
+"delete_habit_confirm" = "删除后，该习惯的所有打卡记录也将被删除。此操作无法撤销。";
+"habit_name" = "习惯名称";
+"habit_name_placeholder" = "输入习惯名称";
+"target_count" = "目标次数";
+"basic_info" = "基本信息";
+"daily_target" = "每日目标: %d 次";
+"edit_habit" = "编辑习惯";
+"new_habit" = "新建习惯";
+"frequency" = "频率";
+"frequency_daily" = "每天";
+"frequency_weekly" = "每周";
+"frequency_custom" = "自定义";
+
+// MARK: - 统计
+"statistics_title" = "数据统计";
+"total_check_ins" = "总打卡";
+"today_progress" = "今日进度";
+"longest_streak" = "最长连续";
+"weekly_completion" = "本周完成率";
+"check_in_trend" = "打卡趋势";
+"daily_check_ins" = "每日打卡次数";
+"total_times" = "共 %d 次";
+"habit_ranking" = "习惯排行";
+"no_habit_data" = "暂无习惯数据";
+"consecutive_days" = "连续 %d 天";
+"times" = "次";
+"check_in_calendar" = "打卡日历";
+"less" = "少";
+"more" = "多";
+"monthly_total" = "本月 %d 次";
+"chart_range_week" = "7天";
+"chart_range_month" = "30天";
+"chart_time_range" = "时间范围";
+"streak_days" = "%d 天";
+
+// MARK: - 专注
+"focus_title" = "专注";
+"focusing" = "专注中";
+"start_focus" = "开始专注";
+"pause_focus" = "暂停";
+"stop_focus" = "停止";
+"continue_focus" = "继续";
+"skip_break" = "跳过";
+"linked_habit" = "关联习惯";
+"select_habit" = "选择习惯";
+"today_focus" = "今日专注";
+"completed_pomodoros" = "完成番茄";
+"focus_progress_not_saved" = "当前专注进度将不会被保存";
+"short_break" = "短休息";
+"long_break" = "长休息";
+"stop_focus_alert" = "停止专注？";
+"continue_focusing" = "继续专注";
+"start_break" = "开始休息";
+"focus_hours_minutes" = "%d小时%d分钟";
+"focus_minutes_only" = "%d分钟";
+"phase_completed_title" = "%@完成！";
+"focus_completed_body" = "干得好！休息一下吧 ☕️";
+"break_completed_body" = "休息结束，继续专注吧 💪";
+
+// MARK: - 设置
+"notification_settings" = "通知设置";
+"enabled" = "已开启";
+"disabled" = "已关闭";
+"focus_settings" = "专注设置";
+"minutes_format" = "%d 分钟";
+"language_settings" = "语言设置";
+"language_settings_footer" = "切换语言后界面会立即更新";
+"data_management" = "数据管理";
+"data_management_subtitle" = "导出、备份、重置";
+"about" = "关于";
+"version_info" = "版本信息";
+
+// MARK: - 通知设置
+"enable_notifications" = "启用通知";
+"notification_switch" = "通知开关";
+"notification_switch_desc" = "开启后，应用将在设定的时间提醒您打卡";
+"permission_status" = "权限状态";
+"reminder_settings" = "提醒设置";
+"sound" = "提示音";
+"vibration" = "振动";
+"notification_permission_hint" = "请在系统设置中开启通知权限，以便接收打卡提醒";
+"permission_not_determined" = "未确定";
+"permission_denied" = "已拒绝";
+"permission_authorized" = "已授权";
+"permission_provisional" = "临时授权";
+"permission_unknown" = "未知";
+
+// MARK: - 专注设置
+"focus_duration" = "专注时长";
+"short_break_duration" = "短休息时长";
+"long_break_duration" = "长休息时长";
+"duration_settings" = "时长设置";
+"pomodoro_tip" = "番茄工作法建议：专注 25 分钟，短休息 5 分钟";
+"pomodoros_format" = "%d 个番茄钟";
+"cycle_settings" = "循环设置";
+"cycle_settings_desc" = "完成设定次数的专注后，进入长休息";
+"auto_start_break" = "自动开始休息";
+"auto_start_break_desc" = "专注结束后自动进入休息";
+"auto_start_focus" = "自动开始专注";
+"auto_start_focus_desc" = "休息结束后自动进入专注";
+"automation" = "自动化";
+"complete_cycle" = "一个完整周期";
+"long_break_interval" = "长休息间隔";
+"total_duration" = "总时长约 %d 分钟（%@ 小时）";
+"config_preview" = "配置预览";
+
+// MARK: - 组件
+"color_ocean_blue" = "海洋蓝";
+"color_vital_orange" = "活力橙";
+"color_fresh_green" = "清新绿";
+"color_romantic_purple" = "浪漫紫";
+"color_warm_red" = "温暖红";
+"color_elegant_black" = "优雅黑";
+"chart_axis_date" = "日期";
+"chart_axis_count" = "次数";
+
+// MARK: - 通用动作
+"reset" = "重置";
+"clear" = "清除";
+
+// MARK: - 数据管理
+"data_overview" = "数据概览";
+"habit_count_label" = "习惯数量";
+"check_in_records" = "打卡记录";
+"focus_records" = "专注记录";
+"export_data" = "导出数据";
+"data_export" = "数据导出";
+"data_export_desc" = "导出为 JSON 格式，可用于备份或迁移";
+"reset_settings" = "重置设置";
+"clear_all_data" = "清除所有数据";
+"danger_zone" = "危险操作";
+"danger_zone_desc" = "清除数据后无法恢复，请谨慎操作";
+"reset_settings_confirm" = "这将把所有设置恢复为默认值，是否继续？";
+"clear_data_confirm" = "这将删除所有习惯、打卡记录和专注记录，此操作不可撤销！";
+
+// MARK: - 关于
+"app_description" = "专注习惯养成，用番茄钟提升效率";
+"features" = "功能特性";
+"feature_habit_tracking" = "习惯追踪";
+"feature_habit_tracking_desc" = "创建和管理每日习惯";
+"feature_pomodoro" = "番茄钟";
+"feature_pomodoro_desc" = "25/5 分钟专注休息循环";
+"feature_statistics" = "数据统计";
+"feature_statistics_desc" = "可视化习惯完成趋势";
+"feature_reminder" = "智能提醒";
+"feature_reminder_desc" = "定时推送打卡提醒";
+"contact_us" = "联系我们";
+"feedback" = "反馈建议";
+"version_format" = "版本 %@ (%@)";
+"copyright" = "© 2026 FocusHabit. All rights reserved.";

@@ -1,0 +1,188 @@
+/* 
+  Localizable.strings (English)
+  FocusHabit
+*/
+
+// MARK: - Common
+"settings" = "Settings";
+"cancel" = "Cancel";
+"confirm" = "Confirm";
+"delete" = "Delete";
+"save" = "Save";
+"done" = "Done";
+
+// MARK: - Tab Bar
+"tab_habits" = "Habits";
+"tab_statistics" = "Statistics";
+"tab_focus" = "Focus";
+"tab_settings" = "Settings";
+
+// MARK: - Greetings
+"greeting_morning" = "Good morning ☀️";
+"greeting_afternoon" = "Good afternoon 🌤️";
+"greeting_evening" = "Good evening 🌙";
+
+// MARK: - Habit List
+"empty_state_title" = "Start Your Habit Journey";
+"empty_state_subtitle" = "Tap + in the top right to create your first habit";
+"create_habit" = "Create Habit";
+"habit_count" = "%d habits";
+"check_in_success" = "Check-in successful!";
+"completion_progress" = "%d/%d times";
+"today_completed" = "Completed today";
+"today_not_completed" = "Not completed today";
+
+// MARK: - Habit Form
+"select_icon" = "Select Icon";
+"select_color" = "Select Color";
+"delete_habit" = "Delete Habit";
+"delete_habit_confirm" = "All check-in records for this habit will also be deleted. This action cannot be undone.";
+"habit_name" = "Habit Name";
+"habit_name_placeholder" = "Enter habit name";
+"target_count" = "Target Count";
+"basic_info" = "Basic Info";
+"daily_target" = "Daily target: %d times";
+"edit_habit" = "Edit Habit";
+"new_habit" = "New Habit";
+"frequency" = "Frequency";
+"frequency_daily" = "Daily";
+"frequency_weekly" = "Weekly";
+"frequency_custom" = "Custom";
+
+// MARK: - Statistics
+"statistics_title" = "Statistics";
+"total_check_ins" = "Total Check-ins";
+"today_progress" = "Today's Progress";
+"longest_streak" = "Longest Streak";
+"weekly_completion" = "Weekly Rate";
+"check_in_trend" = "Check-in Trend";
+"daily_check_ins" = "Daily check-ins";
+"total_times" = "%d times total";
+"habit_ranking" = "Habit Ranking";
+"no_habit_data" = "No habit data";
+"consecutive_days" = "%d days streak";
+"times" = "times";
+"check_in_calendar" = "Check-in Calendar";
+"less" = "Less";
+"more" = "More";
+"monthly_total" = "%d times this month";
+"chart_range_week" = "7 Days";
+"chart_range_month" = "30 Days";
+"chart_time_range" = "Time Range";
+"streak_days" = "%d days";
+
+// MARK: - Focus
+"focus_title" = "Focus";
+"focusing" = "Focusing";
+"start_focus" = "Start Focus";
+"pause_focus" = "Pause";
+"stop_focus" = "Stop";
+"continue_focus" = "Continue";
+"skip_break" = "Skip";
+"linked_habit" = "Linked Habit";
+"select_habit" = "Select Habit";
+"today_focus" = "Today's Focus";
+"completed_pomodoros" = "Pomodoros";
+"focus_progress_not_saved" = "Current focus progress will not be saved";
+"short_break" = "Short Break";
+"long_break" = "Long Break";
+"stop_focus_alert" = "Stop Focus?";
+"continue_focusing" = "Keep Focusing";
+"start_break" = "Start Break";
+"focus_hours_minutes" = "%d hr %d min";
+"focus_minutes_only" = "%d min";
+"phase_completed_title" = "%@ Complete!";
+"focus_completed_body" = "Great job! Time for a break ☕️";
+"break_completed_body" = "Break's over, let's focus! 💪";
+
+// MARK: - Settings
+"notification_settings" = "Notifications";
+"enabled" = "Enabled";
+"disabled" = "Disabled";
+"focus_settings" = "Focus Settings";
+"minutes_format" = "%d min";
+"language_settings" = "Language";
+"language_settings_footer" = "Interface will update immediately after switching";
+"data_management" = "Data Management";
+"data_management_subtitle" = "Export, backup, reset";
+"about" = "About";
+"version_info" = "Version info";
+
+// MARK: - Notification Settings
+"enable_notifications" = "Enable Notifications";
+"notification_switch" = "Notification Switch";
+"notification_switch_desc" = "When enabled, the app will remind you to check in at the set time";
+"permission_status" = "Permission Status";
+"reminder_settings" = "Reminder Settings";
+"sound" = "Sound";
+"vibration" = "Vibration";
+"notification_permission_hint" = "Please enable notification permissions in system settings to receive check-in reminders";
+"permission_not_determined" = "Not Determined";
+"permission_denied" = "Denied";
+"permission_authorized" = "Authorized";
+"permission_provisional" = "Provisional";
+"permission_unknown" = "Unknown";
+
+// MARK: - Focus Settings
+"focus_duration" = "Focus Duration";
+"short_break_duration" = "Short Break";
+"long_break_duration" = "Long Break";
+"duration_settings" = "Duration Settings";
+"pomodoro_tip" = "Pomodoro technique: 25 min focus, 5 min break";
+"pomodoros_format" = "%d pomodoros";
+"cycle_settings" = "Cycle Settings";
+"cycle_settings_desc" = "Enter long break after completing set number of focus sessions";
+"auto_start_break" = "Auto-start Break";
+"auto_start_break_desc" = "Automatically start break after focus ends";
+"auto_start_focus" = "Auto-start Focus";
+"auto_start_focus_desc" = "Automatically start focus after break ends";
+"automation" = "Automation";
+"complete_cycle" = "Complete Cycle";
+"long_break_interval" = "Long Break Interval";
+"total_duration" = "Total duration: ~%d min (%@ hrs)";
+"config_preview" = "Configuration Preview";
+
+// MARK: - Components
+"color_ocean_blue" = "Ocean Blue";
+"color_vital_orange" = "Vital Orange";
+"color_fresh_green" = "Fresh Green";
+"color_romantic_purple" = "Romantic Purple";
+"color_warm_red" = "Warm Red";
+"color_elegant_black" = "Elegant Black";
+"chart_axis_date" = "Date";
+"chart_axis_count" = "Count";
+
+// MARK: - Common Actions
+"reset" = "Reset";
+"clear" = "Clear";
+
+// MARK: - Data Management
+"data_overview" = "Data Overview";
+"habit_count_label" = "Habits";
+"check_in_records" = "Check-in Records";
+"focus_records" = "Focus Records";
+"export_data" = "Export Data";
+"data_export" = "Data Export";
+"data_export_desc" = "Export as JSON format for backup or migration";
+"reset_settings" = "Reset Settings";
+"clear_all_data" = "Clear All Data";
+"danger_zone" = "Danger Zone";
+"danger_zone_desc" = "Data cannot be recovered after clearing, please proceed with caution";
+"reset_settings_confirm" = "This will restore all settings to default values. Continue?";
+"clear_data_confirm" = "This will delete all habits, check-in records and focus records. This action cannot be undone!";
+
+// MARK: - About
+"app_description" = "Build habits with focus, boost efficiency with Pomodoro";
+"features" = "Features";
+"feature_habit_tracking" = "Habit Tracking";
+"feature_habit_tracking_desc" = "Create and manage daily habits";
+"feature_pomodoro" = "Pomodoro Timer";
+"feature_pomodoro_desc" = "25/5 min focus-break cycles";
+"feature_statistics" = "Statistics";
+"feature_statistics_desc" = "Visualize habit completion trends";
+"feature_reminder" = "Smart Reminders";
+"feature_reminder_desc" = "Scheduled check-in notifications";
+"contact_us" = "Contact Us";
+"feedback" = "Feedback";
+"version_format" = "Version %@ (%@)";
+"copyright" = "© 2026 FocusHabit. All rights reserved.";

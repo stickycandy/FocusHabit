@@ -14,7 +14,7 @@ struct ThemeColorPicker: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("选择颜色")
+            Text(L10n.selectColor)
                 .font(.headline)
                 .foregroundStyle(.secondary)
             

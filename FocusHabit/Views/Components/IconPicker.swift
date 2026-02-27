@@ -17,7 +17,7 @@ struct IconPicker: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("选择图标")
+            Text(L10n.selectIcon)
                 .font(.headline)
                 .foregroundStyle(.secondary)
             
