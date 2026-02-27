@@ -74,11 +74,11 @@ struct AboutView: View {
             
             // 联系方式
             Section {
-                Link(destination: URL(string: "https://github.com")!) {
+                Link(destination: URL(string: "https://github.com/stickycandy/FocusHabit")!) {
                     Label("GitHub", systemImage: "link")
                 }
                 
-                Link(destination: URL(string: "mailto:feedback@example.com")!) {
+                Link(destination: URL(string: "mailto:liziqiangrui@hotmail.com")!) {
                     Label("反馈建议", systemImage: "envelope")
                 }
             } header: {
@@ -87,7 +87,7 @@ struct AboutView: View {
             
             // 版权信息
             Section {
-                Text("© 2024 FocusHabit. All rights reserved.")
+                Text("© 2026 FocusHabit. All rights reserved.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .center)
