@@ -73,10 +73,10 @@ struct DataManagementView: View {
         }
         .navigationTitle(L10n.dataManagement)
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $showingExportSheet) {
-            if let url = exportedFileURL {
-                ShareSheet(items: [url])
-            }
+        .sheet(isPresented: $showingExportSheet, onDismiss: {
+            exportedFileURL = nil
+        }) {
+            ShareSheetView(fileURL: $exportedFileURL)
         }
         .alert(L10n.resetSettings, isPresented: $showingResetSettingsAlert) {
             Button(L10n.cancel, role: .cancel) {}
@@ -146,7 +146,10 @@ struct DataManagementView: View {
             
             try data.write(to: tempURL)
             exportedFileURL = tempURL
-            showingExportSheet = true
+            // 延迟显示 sheet，确保 URL 状态已更新
+            DispatchQueue.main.async {
+                showingExportSheet = true
+            }
         } catch {
             print("导出失败: \(error)")
         }
@@ -225,8 +228,43 @@ private struct ExportSession: Codable {
     let isCompleted: Bool
 }
 
-// MARK: - 分享 Sheet
+// MARK: - 可识别的 URL 包装器
 
+private struct IdentifiableURL: Identifiable {
+    let id = UUID()
+    let url: URL
+}
+
+// MARK: - 分享 Sheet 视图
+
+private struct ShareSheetView: View {
+    @Binding var fileURL: URL?
+    
+    var body: some View {
+        Group {
+            if let url = fileURL {
+                ShareSheetRepresentable(items: [url])
+            } else {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
+    }
+}
+
+// MARK: - 分享 Sheet UIKit 包装
+
+struct ShareSheetRepresentable: UIViewControllerRepresentable {
+    let items: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+}
+
+// 保留旧的 ShareSheet 以兼容其他地方的使用
 struct ShareSheet: UIViewControllerRepresentable {
     let items: [Any]
     

@@ -31,104 +31,56 @@ final class AppSettings {
         static let vibrationEnabled = "vibrationEnabled"
     }
     
-    // MARK: - 通知设置
+    // MARK: - 存储属性（用于 @Observable 追踪）
     
     /// 是否启用通知
     var notificationsEnabled: Bool {
-        get { defaults.bool(forKey: Keys.notificationsEnabled) }
-        set { defaults.set(newValue, forKey: Keys.notificationsEnabled) }
+        didSet { defaults.set(notificationsEnabled, forKey: Keys.notificationsEnabled) }
     }
     
-    /// 每日提醒时间（存储为时间戳）
+    /// 每日提醒时间
     var dailyReminderTime: Date {
-        get {
-            let timestamp = defaults.double(forKey: Keys.dailyReminderTime)
-            if timestamp == 0 {
-                // 默认早上 9:00
-                var components = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-                components.hour = 9
-                components.minute = 0
-                return Calendar.current.date(from: components) ?? Date()
-            }
-            return Date(timeIntervalSince1970: timestamp)
-        }
-        set { defaults.set(newValue.timeIntervalSince1970, forKey: Keys.dailyReminderTime) }
+        didSet { defaults.set(dailyReminderTime.timeIntervalSince1970, forKey: Keys.dailyReminderTime) }
     }
-    
-    // MARK: - 专注设置
     
     /// 专注时长（分钟），默认 25
     var focusDuration: Int {
-        get {
-            let value = defaults.integer(forKey: Keys.focusDuration)
-            return value == 0 ? 25 : value
-        }
-        set { defaults.set(newValue, forKey: Keys.focusDuration) }
+        didSet { defaults.set(focusDuration, forKey: Keys.focusDuration) }
     }
     
     /// 短休息时长（分钟），默认 5
     var shortBreakDuration: Int {
-        get {
-            let value = defaults.integer(forKey: Keys.shortBreakDuration)
-            return value == 0 ? 5 : value
-        }
-        set { defaults.set(newValue, forKey: Keys.shortBreakDuration) }
+        didSet { defaults.set(shortBreakDuration, forKey: Keys.shortBreakDuration) }
     }
     
     /// 长休息时长（分钟），默认 15
     var longBreakDuration: Int {
-        get {
-            let value = defaults.integer(forKey: Keys.longBreakDuration)
-            return value == 0 ? 15 : value
-        }
-        set { defaults.set(newValue, forKey: Keys.longBreakDuration) }
+        didSet { defaults.set(longBreakDuration, forKey: Keys.longBreakDuration) }
     }
     
     /// 进入长休息前的专注次数，默认 4
     var sessionsUntilLongBreak: Int {
-        get {
-            let value = defaults.integer(forKey: Keys.sessionsUntilLongBreak)
-            return value == 0 ? 4 : value
-        }
-        set { defaults.set(newValue, forKey: Keys.sessionsUntilLongBreak) }
+        didSet { defaults.set(sessionsUntilLongBreak, forKey: Keys.sessionsUntilLongBreak) }
     }
     
     /// 自动开始休息
     var autoStartBreaks: Bool {
-        get { defaults.bool(forKey: Keys.autoStartBreaks) }
-        set { defaults.set(newValue, forKey: Keys.autoStartBreaks) }
+        didSet { defaults.set(autoStartBreaks, forKey: Keys.autoStartBreaks) }
     }
     
     /// 休息后自动开始专注
     var autoStartFocus: Bool {
-        get { defaults.bool(forKey: Keys.autoStartFocus) }
-        set { defaults.set(newValue, forKey: Keys.autoStartFocus) }
+        didSet { defaults.set(autoStartFocus, forKey: Keys.autoStartFocus) }
     }
-    
-    // MARK: - 声音与振动
     
     /// 是否启用提示音
     var soundEnabled: Bool {
-        get {
-            // 默认开启
-            if defaults.object(forKey: Keys.soundEnabled) == nil {
-                return true
-            }
-            return defaults.bool(forKey: Keys.soundEnabled)
-        }
-        set { defaults.set(newValue, forKey: Keys.soundEnabled) }
+        didSet { defaults.set(soundEnabled, forKey: Keys.soundEnabled) }
     }
     
     /// 是否启用振动
     var vibrationEnabled: Bool {
-        get {
-            // 默认开启
-            if defaults.object(forKey: Keys.vibrationEnabled) == nil {
-                return true
-            }
-            return defaults.bool(forKey: Keys.vibrationEnabled)
-        }
-        set { defaults.set(newValue, forKey: Keys.vibrationEnabled) }
+        didSet { defaults.set(vibrationEnabled, forKey: Keys.vibrationEnabled) }
     }
     
     // MARK: - 方法
@@ -154,5 +106,40 @@ final class AppSettings {
         }
     }
     
-    private init() {}
+    private init() {
+        // 从 UserDefaults 加载初始值
+        self.notificationsEnabled = defaults.bool(forKey: Keys.notificationsEnabled)
+        
+        // 加载每日提醒时间
+        let timestamp = defaults.double(forKey: Keys.dailyReminderTime)
+        if timestamp == 0 {
+            // 默认早上 9:00
+            var components = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+            components.hour = 9
+            components.minute = 0
+            self.dailyReminderTime = Calendar.current.date(from: components) ?? Date()
+        } else {
+            self.dailyReminderTime = Date(timeIntervalSince1970: timestamp)
+        }
+        
+        // 加载专注设置
+        let focusValue = defaults.integer(forKey: Keys.focusDuration)
+        self.focusDuration = focusValue == 0 ? 25 : focusValue
+        
+        let shortBreakValue = defaults.integer(forKey: Keys.shortBreakDuration)
+        self.shortBreakDuration = shortBreakValue == 0 ? 5 : shortBreakValue
+        
+        let longBreakValue = defaults.integer(forKey: Keys.longBreakDuration)
+        self.longBreakDuration = longBreakValue == 0 ? 15 : longBreakValue
+        
+        let sessionsValue = defaults.integer(forKey: Keys.sessionsUntilLongBreak)
+        self.sessionsUntilLongBreak = sessionsValue == 0 ? 4 : sessionsValue
+        
+        self.autoStartBreaks = defaults.bool(forKey: Keys.autoStartBreaks)
+        self.autoStartFocus = defaults.bool(forKey: Keys.autoStartFocus)
+        
+        // 加载声音与振动设置（默认开启）
+        self.soundEnabled = defaults.object(forKey: Keys.soundEnabled) == nil ? true : defaults.bool(forKey: Keys.soundEnabled)
+        self.vibrationEnabled = defaults.object(forKey: Keys.vibrationEnabled) == nil ? true : defaults.bool(forKey: Keys.vibrationEnabled)
+    }
 }

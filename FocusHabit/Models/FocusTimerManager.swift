@@ -98,8 +98,10 @@ final class FocusTimerManager {
     
     /// 格式化的时间显示
     var timeDisplay: String {
-        let minutes = remainingSeconds / 60
-        let seconds = remainingSeconds % 60
+        // 空闲状态下，直接显示当前阶段的总时长（实时响应设置变化）
+        let displaySeconds = (timerState == .idle) ? totalSeconds : remainingSeconds
+        let minutes = displaySeconds / 60
+        let seconds = displaySeconds % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
     

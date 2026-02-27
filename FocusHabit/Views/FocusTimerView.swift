@@ -15,6 +15,9 @@ struct FocusTimerView: View {
     @State private var showingHabitPicker = false
     @State private var showingStopAlert = false
     
+    /// 观察 AppSettings 以响应设置变化
+    private var settings: AppSettings { AppSettings.shared }
+    
     /// 关联的习惯
     private var linkedHabit: Habit? {
         guard let habitId = timerManager.linkedHabitId else { return nil }
@@ -70,6 +73,25 @@ struct FocusTimerView: View {
     
     // MARK: - 计时器圆环
     
+    /// 当前应显示的时间（空闲状态下响应设置变化）
+    private var displayTime: String {
+        if timerManager.timerState == .idle {
+            // 空闲状态下，直接从设置读取时长
+            let totalMinutes: Int
+            switch timerManager.currentPhase {
+            case .focus:
+                totalMinutes = settings.focusDuration
+            case .shortBreak:
+                totalMinutes = settings.shortBreakDuration
+            case .longBreak:
+                totalMinutes = settings.longBreakDuration
+            }
+            return String(format: "%02d:00", totalMinutes)
+        } else {
+            return timerManager.timeDisplay
+        }
+    }
+    
     private var timerCircle: some View {
         CircularProgressWithContent(
             progress: timerManager.progress,
@@ -82,8 +104,8 @@ struct FocusTimerView: View {
                     .font(.title)
                     .foregroundStyle(timerManager.currentPhase.color)
                 
-                // 时间显示
-                Text(timerManager.timeDisplay)
+                // 时间显示（使用 displayTime 以响应设置变化）
+                Text(displayTime)
                     .font(.system(size: 56, weight: .bold, design: .rounded))
                     .monospacedDigit()
                 
