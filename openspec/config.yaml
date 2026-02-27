@@ -1,20 +1,82 @@
 schema: spec-driven
 
-# Project context (optional)
-# This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+# Project context
+context: |
+  ## 项目概述
+  FocusHabit - iOS 习惯追踪 + 番茄钟专注应用
+  
+  ## 技术栈
+  - **平台**: iOS 17+
+  - **UI 框架**: SwiftUI (声明式 UI)
+  - **数据持久化**: SwiftData (@Model, @Query)
+  - **图表可视化**: Swift Charts
+  - **状态管理**: @Observable macro (iOS 17+)
+  - **本地存储**: UserDefaults (设置项)
+  - **通知**: UserNotifications
+  
+  ## 架构规范
+  - 采用 MVVM 架构模式
+  - Model 层使用 SwiftData @Model 宏
+  - View 层使用 SwiftUI 声明式语法
+  - 状态管理使用 @Observable 代替 ObservableObject
+  - 使用 @Query 进行数据查询
+  
+  ## 目录结构
+  ```
+  FocusHabit/
+  ├── Models/          # 数据模型 (@Model) 和状态管理器
+  ├── Views/           # 视图层
+  │   ├── Components/  # 可复用 UI 组件
+  │   │   └── Extensions/  # SwiftUI 扩展
+  │   └── Settings/    # 设置相关页面
+  └── Assets.xcassets/ # 资源文件
+  ```
+  
+  ## 代码规范
+  - 文件命名: PascalCase (如 HabitListView.swift)
+  - 每个文件顶部添加文件头注释说明用途
+  - 使用 MARK: 注释分隔代码区域
+  - 私有组件使用 private struct 定义在同一文件内
+  - 颜色使用 hex 字符串存储，通过 Color(hex:) 扩展转换
+  
+  ## 数据模型约定
+  - 所有模型使用 UUID 作为主键
+  - 时间字段使用 Date 类型
+  - 枚举使用 String 原始值便于存储
+  - 关联关系使用 @Relationship 宏
+  
+  ## UI 规范
+  - 主题色存储为 hex 字符串 (如 "#007AFF")
+  - 图标使用 SF Symbols
+  - 支持 Light/Dark 模式自适应
+  - 使用 NavigationStack 进行页面导航
+  - 使用 Form/List 构建设置类页面
+  
+  ## 语言
+  - 代码注释和 UI 文本使用中文
+  - 变量/函数命名使用英文
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+# Per-artifact rules
+rules:
+  proposal:
+    - 提案应简洁明了，控制在 500 字以内
+    - 必须包含「背景」「目标」「非目标」「方案概述」章节
+    - 使用中文撰写
+  
+  design:
+    - 必须包含数据模型设计（如涉及）
+    - 必须包含 UI 组件层级结构
+    - 必须说明状态管理方式
+    - 使用 Mermaid 绘制流程图和类图
+  
+  specs:
+    - 使用 MUST/SHALL/MAY 关键词明确需求强度
+    - 每个 Requirement 包含多个 Scenario
+    - Scenario 使用 WHEN/THEN/AND 格式
+    - 中文撰写，关键词使用英文
+  
+  tasks:
+    - 任务粒度控制在 1-2 小时内可完成
+    - 按功能模块分组
+    - 包含单元测试任务
+    - 使用 markdown checkbox 格式 (- [ ])
