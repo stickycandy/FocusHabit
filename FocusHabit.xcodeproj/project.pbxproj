@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001 /* FocusHabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001 /* FocusHabitApp.swift */; };
+		A1000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002 /* ContentView.swift */; };
+		A1000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000003 /* Assets.xcassets */; };
+		A1000004 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000004 /* Habit.swift */; };
+		A1000005 /* HabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000005 /* HabitLog.swift */; };
+		A1000006 /* FocusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000006 /* FocusSession.swift */; };
+		A1000007 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000007 /* AppSettings.swift */; };
+		A1000008 /* FocusTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000008 /* FocusTimerManager.swift */; };
+		A1000010 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000010 /* HabitListView.swift */; };
+		A1000011 /* HabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000011 /* HabitFormView.swift */; };
+		A1000012 /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012 /* HabitRowView.swift */; };
+		A1000013 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000013 /* StatisticsView.swift */; };
+		A1000014 /* FocusTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000014 /* FocusTimerView.swift */; };
+		A1000020 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000020 /* SettingsView.swift */; };
+		A1000021 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000021 /* NotificationSettingsView.swift */; };
+		A1000022 /* FocusSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000022 /* FocusSettingsView.swift */; };
+		A1000023 /* DataManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000023 /* DataManagementView.swift */; };
+		A1000024 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000024 /* AboutView.swift */; };
+		A1000030 /* IconPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000030 /* IconPicker.swift */; };
+		A1000031 /* ThemeColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000031 /* ThemeColorPicker.swift */; };
+		A1000032 /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000032 /* ThemeConstants.swift */; };
+		A1000033 /* SummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000033 /* SummaryCard.swift */; };
+		A1000034 /* StatisticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000034 /* StatisticsHelper.swift */; };
+		A1000035 /* CompletionChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000035 /* CompletionChart.swift */; };
+		A1000036 /* CalendarHeatmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000036 /* CalendarHeatmap.swift */; };
+		A1000037 /* HabitRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000037 /* HabitRankingView.swift */; };
+		A1000038 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000038 /* CircularProgressView.swift */; };
+		A1000040 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000040 /* Color+Hex.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A2000000 /* FocusHabit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusHabit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000001 /* FocusHabitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHabitApp.swift; sourceTree = "<group>"; };
+		A2000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2000003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000004 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		A2000005 /* HabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLog.swift; sourceTree = "<group>"; };
+		A2000006 /* FocusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSession.swift; sourceTree = "<group>"; };
+		A2000007 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		A2000008 /* FocusTimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimerManager.swift; sourceTree = "<group>"; };
+		A2000010 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
+		A2000011 /* HabitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitFormView.swift; sourceTree = "<group>"; };
+		A2000012 /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
+		A2000013 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		A2000014 /* FocusTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimerView.swift; sourceTree = "<group>"; };
+		A2000020 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A2000021 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		A2000022 /* FocusSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSettingsView.swift; sourceTree = "<group>"; };
+		A2000023 /* DataManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementView.swift; sourceTree = "<group>"; };
+		A2000024 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		A2000030 /* IconPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPicker.swift; sourceTree = "<group>"; };
+		A2000031 /* ThemeColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorPicker.swift; sourceTree = "<group>"; };
+		A2000032 /* ThemeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeConstants.swift; sourceTree = "<group>"; };
+		A2000033 /* SummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCard.swift; sourceTree = "<group>"; };
+		A2000034 /* StatisticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsHelper.swift; sourceTree = "<group>"; };
+		A2000035 /* CompletionChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionChart.swift; sourceTree = "<group>"; };
+		A2000036 /* CalendarHeatmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeatmap.swift; sourceTree = "<group>"; };
+		A2000037 /* HabitRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRankingView.swift; sourceTree = "<group>"; };
+		A2000038 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		A2000040 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		A3000000 = {
+			isa = PBXGroup;
+			children = (
+				A3000001 /* FocusHabit */,
+				A3000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3000001 /* FocusHabit */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001 /* FocusHabitApp.swift */,
+				A2000002 /* ContentView.swift */,
+				A3000003 /* Models */,
+				A3000004 /* Views */,
+				A2000003 /* Assets.xcassets */,
+			);
+			path = FocusHabit;
+			sourceTree = "<group>";
+		};
+		A3000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000 /* FocusHabit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2000004 /* Habit.swift */,
+				A2000005 /* HabitLog.swift */,
+				A2000006 /* FocusSession.swift */,
+				A2000007 /* AppSettings.swift */,
+				A2000008 /* FocusTimerManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3000004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2000010 /* HabitListView.swift */,
+				A2000011 /* HabitFormView.swift */,
+				A2000012 /* HabitRowView.swift */,
+				A2000013 /* StatisticsView.swift */,
+				A2000014 /* FocusTimerView.swift */,
+				A3000005 /* Settings */,
+				A3000006 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A3000005 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A2000020 /* SettingsView.swift */,
+				A2000021 /* NotificationSettingsView.swift */,
+				A2000022 /* FocusSettingsView.swift */,
+				A2000023 /* DataManagementView.swift */,
+				A2000024 /* AboutView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A3000006 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A2000030 /* IconPicker.swift */,
+				A2000031 /* ThemeColorPicker.swift */,
+				A2000032 /* ThemeConstants.swift */,
+				A2000033 /* SummaryCard.swift */,
+				A2000034 /* StatisticsHelper.swift */,
+				A2000035 /* CompletionChart.swift */,
+				A2000036 /* CalendarHeatmap.swift */,
+				A2000037 /* HabitRankingView.swift */,
+				A2000038 /* CircularProgressView.swift */,
+				A3000007 /* Extensions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A3000007 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2000040 /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4000000 /* FocusHabit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5000002 /* Build configuration list for PBXNativeTarget "FocusHabit" */;
+			buildPhases = (
+				A4000001 /* Sources */,
+				A4000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FocusHabit;
+			productName = FocusHabit;
+			productReference = A2000000 /* FocusHabit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4000003 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A4000000 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A5000000 /* Build configuration list for PBXProject "FocusHabit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = A3000000;
+			productRefGroup = A3000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4000000 /* FocusHabit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001 /* FocusHabitApp.swift in Sources */,
+				A1000002 /* ContentView.swift in Sources */,
+				A1000004 /* Habit.swift in Sources */,
+				A1000005 /* HabitLog.swift in Sources */,
+				A1000006 /* FocusSession.swift in Sources */,
+				A1000007 /* AppSettings.swift in Sources */,
+				A1000008 /* FocusTimerManager.swift in Sources */,
+				A1000010 /* HabitListView.swift in Sources */,
+				A1000011 /* HabitFormView.swift in Sources */,
+				A1000012 /* HabitRowView.swift in Sources */,
+				A1000013 /* StatisticsView.swift in Sources */,
+				A1000014 /* FocusTimerView.swift in Sources */,
+				A1000020 /* SettingsView.swift in Sources */,
+				A1000021 /* NotificationSettingsView.swift in Sources */,
+				A1000022 /* FocusSettingsView.swift in Sources */,
+				A1000023 /* DataManagementView.swift in Sources */,
+				A1000024 /* AboutView.swift in Sources */,
+				A1000030 /* IconPicker.swift in Sources */,
+				A1000031 /* ThemeColorPicker.swift in Sources */,
+				A1000032 /* ThemeConstants.swift in Sources */,
+				A1000033 /* SummaryCard.swift in Sources */,
+				A1000034 /* StatisticsHelper.swift in Sources */,
+				A1000035 /* CompletionChart.swift in Sources */,
+				A1000036 /* CalendarHeatmap.swift in Sources */,
+				A1000037 /* HabitRankingView.swift in Sources */,
+				A1000038 /* CircularProgressView.swift in Sources */,
+				A1000040 /* Color+Hex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A5000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A5000003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A5000004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.focushabit.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5000005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.focushabit.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5000000 /* Build configuration list for PBXProject "FocusHabit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5000001 /* Debug */,
+				A5000003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5000002 /* Build configuration list for PBXNativeTarget "FocusHabit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5000004 /* Debug */,
+				A5000005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4000003 /* Project object */;
+}
