@@ -50,6 +50,14 @@ struct CalendarHeatmap: View {
             formatter.dateFormat = "yyyy年M月"
         case .en:
             formatter.dateFormat = "MMMM yyyy"
+        case .de:
+            formatter.dateFormat = "MMMM yyyy"
+        case .ko:
+            formatter.dateFormat = "yyyy년 M월"
+        case .ja:
+            formatter.dateFormat = "yyyy年M月"
+        case .th:
+            formatter.dateFormat = "MMMM yyyy"
         }
         return formatter.string(from: displayedMonth)
     }

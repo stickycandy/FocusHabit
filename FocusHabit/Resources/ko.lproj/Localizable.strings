@@ -1,0 +1,209 @@
+/* 
+  Localizable.strings (한국어)
+  FocusHabit
+*/
+
+// MARK: - Common
+"settings" = "설정";
+"cancel" = "취소";
+"confirm" = "확인";
+"delete" = "삭제";
+"save" = "저장";
+"done" = "완료";
+
+// MARK: - Tab Bar
+"tab_habits" = "습관";
+"tab_statistics" = "통계";
+"tab_focus" = "집중";
+"tab_settings" = "설정";
+
+// MARK: - Greetings
+"greeting_morning" = "좋은 아침이에요 ☀️";
+"greeting_afternoon" = "좋은 오후예요 🌤️";
+"greeting_evening" = "좋은 저녁이에요 🌙";
+
+// MARK: - Habit List
+"empty_state_title" = "습관 여정을 시작하세요";
+"empty_state_subtitle" = "오른쪽 상단의 +를 탭하여 첫 번째 습관을 만드세요";
+"create_habit" = "습관 만들기";
+"habit_count" = "%d개 습관";
+"check_in_success" = "체크인 완료!";
+"completion_progress" = "%d/%d회";
+"today_completed" = "오늘 완료";
+"today_not_completed" = "오늘 미완료";
+
+// MARK: - Habit Form
+"select_icon" = "아이콘 선택";
+"select_color" = "색상 선택";
+"delete_habit" = "습관 삭제";
+"delete_habit_confirm" = "이 습관의 모든 체크인 기록도 함께 삭제됩니다. 이 작업은 취소할 수 없습니다.";
+"habit_name" = "습관 이름";
+"habit_name_placeholder" = "습관 이름 입력";
+"target_count" = "목표 횟수";
+"basic_info" = "기본 정보";
+"daily_target" = "일일 목표: %d회";
+"edit_habit" = "습관 편집";
+"new_habit" = "새 습관";
+"frequency" = "빈도";
+"frequency_daily" = "매일";
+"frequency_weekly" = "매주";
+"frequency_custom" = "사용자 정의";
+
+// MARK: - Statistics
+"statistics_title" = "통계";
+"total_check_ins" = "총 체크인";
+"today_progress" = "오늘의 진행";
+"longest_streak" = "최장 연속";
+"weekly_completion" = "주간 달성률";
+"check_in_trend" = "체크인 추세";
+"daily_check_ins" = "일일 체크인";
+"total_times" = "총 %d회";
+"habit_ranking" = "습관 순위";
+"no_habit_data" = "습관 데이터 없음";
+"consecutive_days" = "%d일 연속";
+"times" = "회";
+"check_in_calendar" = "체크인 캘린더";
+"less" = "적음";
+"more" = "많음";
+"monthly_total" = "이번 달 %d회";
+"chart_range_week" = "7일";
+"chart_range_month" = "30일";
+"chart_time_range" = "기간";
+"streak_days" = "%d일";
+
+// MARK: - Focus
+"focus_title" = "집중";
+"focusing" = "집중 중";
+"start_focus" = "집중 시작";
+"pause_focus" = "일시정지";
+"stop_focus" = "중지";
+"continue_focus" = "계속";
+"skip_break" = "건너뛰기";
+"linked_habit" = "연결된 습관";
+"select_habit" = "습관 선택";
+"today_focus" = "오늘의 집중";
+"completed_pomodoros" = "뽀모도로";
+"focus_progress_not_saved" = "현재 집중 진행 상황이 저장되지 않습니다";
+"short_break" = "짧은 휴식";
+"long_break" = "긴 휴식";
+"stop_focus_alert" = "집중을 중지할까요?";
+"continue_focusing" = "계속 집중하기";
+"start_break" = "휴식 시작";
+"focus_hours_minutes" = "%d시간 %d분";
+"focus_minutes_only" = "%d분";
+"phase_completed_title" = "%@ 완료!";
+"focus_completed_body" = "잘했어요! 휴식 시간이에요 ☕️";
+"break_completed_body" = "휴식 끝, 집중하세요! 💪";
+
+// MARK: - Settings
+"notification_settings" = "알림";
+"enabled" = "활성화됨";
+"disabled" = "비활성화됨";
+"focus_settings" = "집중 설정";
+"minutes_format" = "%d분";
+"language_settings" = "언어";
+"language_settings_footer" = "전환 후 인터페이스가 즉시 업데이트됩니다";
+"data_management" = "데이터 관리";
+"data_management_subtitle" = "내보내기, 백업, 초기화";
+"about" = "정보";
+"version_info" = "버전 정보";
+
+// MARK: - Notification Settings
+"enable_notifications" = "알림 활성화";
+"notification_switch" = "알림 스위치";
+"notification_switch_desc" = "활성화하면 설정된 시간에 체크인 알림을 받습니다";
+"permission_status" = "권한 상태";
+"reminder_settings" = "알림 설정";
+"sound" = "소리";
+"vibration" = "진동";
+"notification_permission_hint" = "체크인 알림을 받으려면 시스템 설정에서 알림 권한을 활성화하세요";
+"permission_not_determined" = "미결정";
+"permission_denied" = "거부됨";
+"permission_authorized" = "승인됨";
+"permission_provisional" = "임시";
+"permission_unknown" = "알 수 없음";
+
+// MARK: - Focus Settings
+"focus_duration" = "집중 시간";
+"short_break_duration" = "짧은 휴식";
+"long_break_duration" = "긴 휴식";
+"duration_settings" = "시간 설정";
+"pomodoro_tip" = "뽀모도로 기법: 25분 집중, 5분 휴식";
+"pomodoros_format" = "%d 뽀모도로";
+"cycle_settings" = "사이클 설정";
+"cycle_settings_desc" = "설정된 횟수의 집중 세션 완료 후 긴 휴식 시작";
+"auto_start_break" = "자동 휴식 시작";
+"auto_start_break_desc" = "집중 종료 후 자동으로 휴식 시작";
+"auto_start_focus" = "자동 집중 시작";
+"auto_start_focus_desc" = "휴식 종료 후 자동으로 집중 시작";
+"automation" = "자동화";
+"complete_cycle" = "전체 사이클";
+"long_break_interval" = "긴 휴식 간격";
+"total_duration" = "총 시간: 약 %d분 (%@시간)";
+"config_preview" = "설정 미리보기";
+
+// MARK: - Components
+"color_ocean_blue" = "오션 블루";
+"color_vital_orange" = "바이탈 오렌지";
+"color_fresh_green" = "프레시 그린";
+"color_romantic_purple" = "로맨틱 퍼플";
+"color_warm_red" = "웜 레드";
+"color_elegant_black" = "엘레강트 블랙";
+"chart_axis_date" = "날짜";
+"chart_axis_count" = "횟수";
+
+// MARK: - Common Actions
+"reset" = "초기화";
+"clear" = "지우기";
+
+// MARK: - Data Management
+"data_overview" = "데이터 개요";
+"habit_count_label" = "습관";
+"check_in_records" = "체크인 기록";
+"focus_records" = "집중 기록";
+"export_data" = "데이터 내보내기";
+"data_export" = "데이터 내보내기";
+"data_export_desc" = "백업 또는 마이그레이션을 위해 JSON 형식으로 내보내기";
+"reset_settings" = "설정 초기화";
+"clear_all_data" = "모든 데이터 삭제";
+"danger_zone" = "위험 영역";
+"danger_zone_desc" = "삭제 후 데이터를 복구할 수 없습니다. 주의하여 진행하세요";
+"reset_settings_confirm" = "모든 설정을 기본값으로 복원합니다. 계속할까요?";
+"clear_data_confirm" = "모든 습관, 체크인 기록 및 집중 기록이 삭제됩니다. 이 작업은 취소할 수 없습니다!";
+
+// MARK: - About
+"app_description" = "집중으로 습관 만들기, 뽀모도로로 효율 높이기";
+"features" = "기능";
+"feature_habit_tracking" = "습관 추적";
+"feature_habit_tracking_desc" = "일일 습관 만들기 및 관리";
+"feature_pomodoro" = "뽀모도로 타이머";
+"feature_pomodoro_desc" = "25/5분 집중-휴식 사이클";
+"feature_statistics" = "통계";
+"feature_statistics_desc" = "습관 완료 추세 시각화";
+"feature_reminder" = "스마트 알림";
+"feature_reminder_desc" = "예약된 체크인 알림";
+"contact_us" = "문의하기";
+"feedback" = "피드백";
+"version_format" = "버전 %@ (%@)";
+"copyright" = "© 2026 FocusHabit. All rights reserved.";
+
+// MARK: - Focus Music
+"focus_music" = "집중 음악";
+"focus_music_enabled" = "음악 활성화";
+"white_noise" = "백색소음";
+"white_noise_forest" = "숲";
+"white_noise_rain" = "비";
+"white_noise_ocean" = "바다";
+"white_noise_crickets" = "귀뚜라미";
+"apple_music" = "Apple Music";
+"apple_music_connected" = "연결됨";
+"apple_music_not_connected" = "연결 안 됨";
+"apple_music_denied" = "접근 거부됨";
+"apple_music_restricted" = "제한됨";
+"apple_music_connect" = "Apple Music 연결";
+"apple_music_select_playlist" = "플레이리스트 선택";
+"now_playing" = "재생 중";
+"select_music_source" = "음악 소스를 선택하여 재생";
+"music_volume" = "볼륨";
+"stop_music_on_focus_end" = "집중 종료 시 음악 중지";
+"stop_music_on_focus_end_desc" = "비활성화하면 집중 종료 후에도 음악이 계속 재생됩니다";

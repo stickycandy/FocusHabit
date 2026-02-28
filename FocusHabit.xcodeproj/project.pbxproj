@@ -83,6 +83,10 @@
 		A2000061 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2000062 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Resources/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A2000063 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Resources/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000064 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Resources/de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000065 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = Resources/ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000066 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Resources/ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2000067 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = Resources/th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2000070 /* FocusMusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusMusicManager.swift; sourceTree = "<group>"; };
 		A2000071 /* FocusMusicSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusMusicSheet.swift; sourceTree = "<group>"; };
 		A2000080 /* forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forest.mp3; sourceTree = "<group>"; };
@@ -268,6 +272,10 @@
 				Base,
 				"zh-Hans",
 				"zh-Hant",
+				de,
+				ko,
+				ja,
+				th,
 			);
 			mainGroup = A3000000;
 			productRefGroup = A3000002 /* Products */;
@@ -480,6 +488,10 @@
 				A2000061 /* en */,
 				A2000062 /* zh-Hans */,
 				A2000063 /* zh-Hant */,
+				A2000064 /* de */,
+				A2000065 /* ko */,
+				A2000066 /* ja */,
+				A2000067 /* th */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

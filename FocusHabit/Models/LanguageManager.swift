@@ -13,6 +13,10 @@ enum AppLanguage: String, CaseIterable, Identifiable {
     case zhHans = "zh-Hans"  // 简体中文
     case zhHant = "zh-Hant"  // 繁体中文
     case en = "en"           // 英语
+    case de = "de"           // 德语
+    case ko = "ko"           // 韩语
+    case ja = "ja"           // 日语
+    case th = "th"           // 泰语
     
     var id: String { rawValue }
     
@@ -22,6 +26,10 @@ enum AppLanguage: String, CaseIterable, Identifiable {
         case .zhHans: return "简体中文"
         case .zhHant: return "繁體中文"
         case .en: return "English"
+        case .de: return "Deutsch"
+        case .ko: return "한국어"
+        case .ja: return "日本語"
+        case .th: return "ไทย"
         }
     }
     
@@ -79,6 +87,14 @@ final class LanguageManager {
                 return .zhHant
             } else if lowercased.hasPrefix("en") {
                 return .en
+            } else if lowercased.hasPrefix("de") {
+                return .de
+            } else if lowercased.hasPrefix("ko") {
+                return .ko
+            } else if lowercased.hasPrefix("ja") {
+                return .ja
+            } else if lowercased.hasPrefix("th") {
+                return .th
             }
         }
         
@@ -131,6 +147,14 @@ final class LanguageManager {
                 formatter.dateFormat = "M月d日 EEEE"
             case .en:
                 formatter.dateFormat = "MMM d, EEEE"
+            case .de:
+                formatter.dateFormat = "d. MMM, EEEE"
+            case .ko:
+                formatter.dateFormat = "M월 d일 EEEE"
+            case .ja:
+                formatter.dateFormat = "M月d日 EEEE"
+            case .th:
+                formatter.dateFormat = "d MMM EEEE"
             }
         case .shortDate:
             formatter.dateStyle = .short

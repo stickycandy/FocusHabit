@@ -1,0 +1,209 @@
+/* 
+  Localizable.strings (日本語)
+  FocusHabit
+*/
+
+// MARK: - Common
+"settings" = "設定";
+"cancel" = "キャンセル";
+"confirm" = "確認";
+"delete" = "削除";
+"save" = "保存";
+"done" = "完了";
+
+// MARK: - Tab Bar
+"tab_habits" = "習慣";
+"tab_statistics" = "統計";
+"tab_focus" = "集中";
+"tab_settings" = "設定";
+
+// MARK: - Greetings
+"greeting_morning" = "おはようございます ☀️";
+"greeting_afternoon" = "こんにちは 🌤️";
+"greeting_evening" = "こんばんは 🌙";
+
+// MARK: - Habit List
+"empty_state_title" = "習慣の旅を始めましょう";
+"empty_state_subtitle" = "右上の+をタップして最初の習慣を作成してください";
+"create_habit" = "習慣を作成";
+"habit_count" = "%d個の習慣";
+"check_in_success" = "チェックイン成功！";
+"completion_progress" = "%d/%d回";
+"today_completed" = "今日完了";
+"today_not_completed" = "今日未完了";
+
+// MARK: - Habit Form
+"select_icon" = "アイコンを選択";
+"select_color" = "色を選択";
+"delete_habit" = "習慣を削除";
+"delete_habit_confirm" = "この習慣のすべてのチェックイン記録も削除されます。この操作は取り消せません。";
+"habit_name" = "習慣名";
+"habit_name_placeholder" = "習慣名を入力";
+"target_count" = "目標回数";
+"basic_info" = "基本情報";
+"daily_target" = "1日の目標: %d回";
+"edit_habit" = "習慣を編集";
+"new_habit" = "新しい習慣";
+"frequency" = "頻度";
+"frequency_daily" = "毎日";
+"frequency_weekly" = "毎週";
+"frequency_custom" = "カスタム";
+
+// MARK: - Statistics
+"statistics_title" = "統計";
+"total_check_ins" = "合計チェックイン";
+"today_progress" = "今日の進捗";
+"longest_streak" = "最長連続";
+"weekly_completion" = "週間達成率";
+"check_in_trend" = "チェックイン傾向";
+"daily_check_ins" = "1日のチェックイン";
+"total_times" = "合計%d回";
+"habit_ranking" = "習慣ランキング";
+"no_habit_data" = "習慣データなし";
+"consecutive_days" = "%d日連続";
+"times" = "回";
+"check_in_calendar" = "チェックインカレンダー";
+"less" = "少ない";
+"more" = "多い";
+"monthly_total" = "今月%d回";
+"chart_range_week" = "7日間";
+"chart_range_month" = "30日間";
+"chart_time_range" = "期間";
+"streak_days" = "%d日";
+
+// MARK: - Focus
+"focus_title" = "集中";
+"focusing" = "集中中";
+"start_focus" = "集中開始";
+"pause_focus" = "一時停止";
+"stop_focus" = "停止";
+"continue_focus" = "続ける";
+"skip_break" = "スキップ";
+"linked_habit" = "関連習慣";
+"select_habit" = "習慣を選択";
+"today_focus" = "今日の集中";
+"completed_pomodoros" = "ポモドーロ";
+"focus_progress_not_saved" = "現在の集中進捗は保存されません";
+"short_break" = "短い休憩";
+"long_break" = "長い休憩";
+"stop_focus_alert" = "集中を停止しますか？";
+"continue_focusing" = "集中を続ける";
+"start_break" = "休憩開始";
+"focus_hours_minutes" = "%d時間%d分";
+"focus_minutes_only" = "%d分";
+"phase_completed_title" = "%@完了！";
+"focus_completed_body" = "お疲れ様！休憩の時間です ☕️";
+"break_completed_body" = "休憩終了、集中しましょう！ 💪";
+
+// MARK: - Settings
+"notification_settings" = "通知";
+"enabled" = "有効";
+"disabled" = "無効";
+"focus_settings" = "集中設定";
+"minutes_format" = "%d分";
+"language_settings" = "言語";
+"language_settings_footer" = "切り替え後すぐにインターフェースが更新されます";
+"data_management" = "データ管理";
+"data_management_subtitle" = "エクスポート、バックアップ、リセット";
+"about" = "情報";
+"version_info" = "バージョン情報";
+
+// MARK: - Notification Settings
+"enable_notifications" = "通知を有効にする";
+"notification_switch" = "通知スイッチ";
+"notification_switch_desc" = "有効にすると、設定した時間にチェックインの通知が届きます";
+"permission_status" = "権限状態";
+"reminder_settings" = "リマインダー設定";
+"sound" = "サウンド";
+"vibration" = "バイブレーション";
+"notification_permission_hint" = "チェックインのリマインダーを受け取るには、システム設定で通知権限を有効にしてください";
+"permission_not_determined" = "未決定";
+"permission_denied" = "拒否";
+"permission_authorized" = "許可";
+"permission_provisional" = "仮許可";
+"permission_unknown" = "不明";
+
+// MARK: - Focus Settings
+"focus_duration" = "集中時間";
+"short_break_duration" = "短い休憩";
+"long_break_duration" = "長い休憩";
+"duration_settings" = "時間設定";
+"pomodoro_tip" = "ポモドーロ・テクニック: 25分集中、5分休憩";
+"pomodoros_format" = "%dポモドーロ";
+"cycle_settings" = "サイクル設定";
+"cycle_settings_desc" = "設定回数の集中セッション完了後に長い休憩に入ります";
+"auto_start_break" = "自動休憩開始";
+"auto_start_break_desc" = "集中終了後に自動的に休憩を開始";
+"auto_start_focus" = "自動集中開始";
+"auto_start_focus_desc" = "休憩終了後に自動的に集中を開始";
+"automation" = "自動化";
+"complete_cycle" = "完全サイクル";
+"long_break_interval" = "長い休憩間隔";
+"total_duration" = "合計時間: 約%d分 (%@時間)";
+"config_preview" = "設定プレビュー";
+
+// MARK: - Components
+"color_ocean_blue" = "オーシャンブルー";
+"color_vital_orange" = "バイタルオレンジ";
+"color_fresh_green" = "フレッシュグリーン";
+"color_romantic_purple" = "ロマンティックパープル";
+"color_warm_red" = "ウォームレッド";
+"color_elegant_black" = "エレガントブラック";
+"chart_axis_date" = "日付";
+"chart_axis_count" = "回数";
+
+// MARK: - Common Actions
+"reset" = "リセット";
+"clear" = "クリア";
+
+// MARK: - Data Management
+"data_overview" = "データ概要";
+"habit_count_label" = "習慣";
+"check_in_records" = "チェックイン記録";
+"focus_records" = "集中記録";
+"export_data" = "データをエクスポート";
+"data_export" = "データエクスポート";
+"data_export_desc" = "バックアップまたは移行のためにJSON形式でエクスポート";
+"reset_settings" = "設定をリセット";
+"clear_all_data" = "すべてのデータを削除";
+"danger_zone" = "危険ゾーン";
+"danger_zone_desc" = "削除後のデータは復元できません。慎重に進めてください";
+"reset_settings_confirm" = "すべての設定がデフォルト値に戻ります。続行しますか？";
+"clear_data_confirm" = "すべての習慣、チェックイン記録、集中記録が削除されます。この操作は取り消せません！";
+
+// MARK: - About
+"app_description" = "集中で習慣を作り、ポモドーロで効率アップ";
+"features" = "機能";
+"feature_habit_tracking" = "習慣トラッキング";
+"feature_habit_tracking_desc" = "毎日の習慣を作成・管理";
+"feature_pomodoro" = "ポモドーロタイマー";
+"feature_pomodoro_desc" = "25/5分の集中・休憩サイクル";
+"feature_statistics" = "統計";
+"feature_statistics_desc" = "習慣達成トレンドを可視化";
+"feature_reminder" = "スマートリマインダー";
+"feature_reminder_desc" = "スケジュールされたチェックイン通知";
+"contact_us" = "お問い合わせ";
+"feedback" = "フィードバック";
+"version_format" = "バージョン %@ (%@)";
+"copyright" = "© 2026 FocusHabit. All rights reserved.";
+
+// MARK: - Focus Music
+"focus_music" = "集中音楽";
+"focus_music_enabled" = "音楽を有効にする";
+"white_noise" = "ホワイトノイズ";
+"white_noise_forest" = "森";
+"white_noise_rain" = "雨";
+"white_noise_ocean" = "海";
+"white_noise_crickets" = "コオロギ";
+"apple_music" = "Apple Music";
+"apple_music_connected" = "接続済み";
+"apple_music_not_connected" = "未接続";
+"apple_music_denied" = "アクセス拒否";
+"apple_music_restricted" = "制限あり";
+"apple_music_connect" = "Apple Musicに接続";
+"apple_music_select_playlist" = "プレイリストを選択";
+"now_playing" = "再生中";
+"select_music_source" = "音楽ソースを選択して再生";
+"music_volume" = "音量";
+"stop_music_on_focus_end" = "集中終了時に音楽を停止";
+"stop_music_on_focus_end_desc" = "無効にすると、集中終了後も音楽は再生を続けます";

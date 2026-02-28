@@ -1,110 +1,76 @@
-# FocusHabit
+# 📱 FocusHabit
 
-> 🎯 专注习惯养成，用番茄钟提升效率
+<p align="center">
+  <img src="FocusHabit/Assets.xcassets/AppIcon.appiconset/AppIcon-Light.png" width="120" alt="FocusHabit Logo">
+</p>
 
-FocusHabit 是一款结合**习惯追踪**与**番茄钟计时**的 iOS 应用，帮助你养成良好习惯并保持专注。
+<p align="center">
+  <strong>习惯养成 + 专注计时，双引擎驱动你的成长</strong>
+</p>
 
-![iOS 17+](https://img.shields.io/badge/iOS-17%2B-blue)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-5.0-orange)
-![SwiftData](https://img.shields.io/badge/SwiftData-Enabled-green)
-![License](https://img.shields.io/badge/License-Apache%202.0-blue)
+<p align="center">
+  <a href="#功能特性">功能特性</a> •
+  <a href="#截图预览">截图预览</a> •
+  <a href="#技术栈">技术栈</a> •
+  <a href="#安装运行">安装运行</a> •
+  <a href="#项目结构">项目结构</a> •
+  <a href="#国际化">国际化</a> •
+  <a href="#许可证">许可证</a>
+</p>
+
+---
 
 ## ✨ 功能特性
 
-### 📋 习惯管理
-- **创建习惯**：自定义名称、图标、主题色
-- **灵活频率**：支持每日/每周任意天数设置
-- **一键打卡**：快速记录习惯完成状态
-- **滑动操作**：左滑编辑、右滑删除
+### 🎯 习惯追踪
+- **灵活创建** - 自定义习惯名称、图标、颜色和提醒时间
+- **多种频率** - 支持每日、每周特定几天等重复模式
+- **轻松打卡** - 点击打卡，专注完成后自动打卡
+- **即时反馈** - 粒子动画效果 + 震动反馈 + 鼓励语录
+
+### ⏱️ 专注计时（番茄钟）
+- **番茄工作法** - 默认 25 分钟专注 + 5 分钟休息
+- **自定义时长** - 15-60 分钟可调，满足不同需求
+- **白噪音陪伴** - 雨声 🌧️ | 海浪 🌊 | 森林 🌲 | 蟋蟀 🦗
+- **专注记录** - 记录每次专注时长、评分和关联习惯
 
 ### 📊 数据统计
-- **趋势图表**：7天/30天完成率可视化 (Swift Charts)
-- **日历热力图**：月视图展示打卡强度
-- **数据汇总**：总打卡数、当前连续天数、完成率
-- **习惯排行**：按完成次数排序的习惯榜单
+- **日历热力图** - 直观展示打卡情况
+- **完成率图表** - 追踪习惯养成进度
+- **习惯排行** - 查看最坚持的习惯
+- **趋势分析** - 了解专注时间分布
 
-### ⏱️ 专注计时器
-- **番茄钟模式**：25分钟专注 + 5分钟短休息
-- **长休息**：每4个番茄后自动触发15分钟长休息
-- **习惯关联**：专注时段可关联到具体习惯
-- **进度可视化**：环形进度条实时显示
+### 🎨 个性化体验
+- **6 种主题色** - 海洋蓝、活力橙、清新绿、浪漫紫、温暖红、优雅黑
+- **深色模式** - 完美适配系统深色模式
+- **多语言支持** - 中文、英文、日语、韩语、德语、泰语
 
-### 🌍 多语言支持
-- **三语切换**：简体中文 / 繁体中文 / English
-- **应用内切换**：无需重启，实时生效
-- **完整覆盖**：所有界面文案均已本地化
-- **智能适配**：日期格式随语言自动调整（如 "2024年3月" vs "March 2024"）
+---
 
-### ⚙️ 设置中心
-- **通知提醒**：自定义每日提醒时间
-- **时长配置**：调整专注/休息时长
-- **数据管理**：JSON 格式导出备份
-- **深色模式**：跟随系统自动切换
-- **语言设置**：应用内切换显示语言
+## �️ 技术栈
 
-## 📱 截图预览
+| 模块 | 技术选型 |
+|------|---------|
+| 开发语言 | Swift 5.9+ |
+| UI 框架 | SwiftUI |
+| 数据持久化 | SwiftData |
+| 图表库 | Swift Charts |
+| 最低版本 | iOS 17.0+ |
 
-| 习惯列表 | 统计分析 | 专注计时 | 设置 |
-|:---:|:---:|:---:|:---:|
-| 管理每日习惯 | 可视化数据 | 番茄钟计时 | 个性化配置 |
+---
 
-## 🛠️ 技术栈
-
-- **UI 框架**: SwiftUI (iOS 17+)
-- **数据持久化**: SwiftData
-- **图表可视化**: Swift Charts
-- **架构模式**: MVVM + @Observable
-- **本地通知**: UserNotifications
-
-## 📦 项目结构
-
-```
-FocusHabit/
-├── FocusHabitApp.swift       # 应用入口
-├── ContentView.swift         # TabView 主容器
-├── Models/
-│   ├── Habit.swift           # 习惯数据模型
-│   ├── HabitLog.swift        # 打卡记录模型
-│   ├── FocusSession.swift    # 专注会话模型
-│   ├── AppSettings.swift     # 应用设置 (UserDefaults)
-│   ├── FocusTimerManager.swift # 计时器状态管理
-│   └── LanguageManager.swift # 多语言管理 (L10n)
-├── Views/
-│   ├── HabitListView.swift   # 习惯列表
-│   ├── HabitFormView.swift   # 习惯编辑表单
-│   ├── HabitRowView.swift    # 习惯行组件
-│   ├── StatisticsView.swift  # 统计仪表盘
-│   ├── FocusTimerView.swift  # 专注计时器
-│   ├── Components/           # 可复用组件
-│   │   ├── CompletionChart.swift
-│   │   ├── CalendarHeatmap.swift
-│   │   ├── CircularProgressView.swift
-│   │   └── ...
-│   └── Settings/             # 设置页面
-│       ├── SettingsView.swift
-│       ├── LanguageSettingsView.swift
-│       ├── NotificationSettingsView.swift
-│       └── ...
-├── Resources/                # 本地化资源
-│   ├── en.lproj/Localizable.strings
-│   ├── zh-Hans.lproj/Localizable.strings
-│   └── zh-Hant.lproj/Localizable.strings
-└── Assets.xcassets/          # 资源文件
-```
-
-## 🚀 快速开始
+## 🚀 安装运行
 
 ### 环境要求
-
 - macOS 14.0+
 - Xcode 15.0+
-- iOS 17.0+ (目标设备)
+- iOS 17.0+ (模拟器或真机)
 
-### 安装运行
+### 步骤
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/stickycandy/FocusHabit.git
+   git clone https://github.com/your-username/FocusHabit.git
    cd FocusHabit
    ```
 
@@ -113,36 +79,118 @@ FocusHabit/
    open FocusHabit.xcodeproj
    ```
 
-3. **运行应用**
-   - 选择目标设备 (iPhone 模拟器或真机)
-   - 点击 Run (⌘R)
+3. **选择目标设备**
+   - 在 Xcode 中选择 iPhone 模拟器或已连接的真机
 
-## 📝 开发计划
+4. **运行项目**
+   - 点击 ▶️ 运行按钮，或按 `Cmd + R`
 
-- [x] 多语言支持（简体中文 / 繁体中文 / English）
-- [ ] Widget 小组件支持
+---
+
+## � 项目结构
+
+```
+FocusHabit/
+├── FocusHabitApp.swift          # App 入口
+├── ContentView.swift            # 主视图（Tab 导航）
+├── Models/                      # 数据模型
+│   ├── Habit.swift              # 习惯模型
+│   ├── HabitLog.swift           # 打卡记录模型
+│   ├── FocusSession.swift       # 专注记录模型
+│   ├── AppSettings.swift        # 应用设置
+│   ├── FocusTimerManager.swift  # 专注计时器管理
+│   └── LanguageManager.swift    # 语言管理
+├── Views/                       # 视图层
+│   ├── HabitListView.swift      # 习惯列表页
+│   ├── HabitFormView.swift      # 习惯表单页
+│   ├── HabitRowView.swift       # 习惯行组件
+│   ├── FocusTimerView.swift     # 专注计时页
+│   ├── StatisticsView.swift     # 统计页面
+│   ├── Components/              # 通用组件
+│   │   ├── CalendarHeatmap.swift    # 日历热力图
+│   │   ├── CircularProgressView.swift # 环形进度
+│   │   ├── CompletionChart.swift    # 完成率图表
+│   │   ├── HabitRankingView.swift   # 习惯排行
+│   │   ├── IconPicker.swift         # 图标选择器
+│   │   ├── ThemeColorPicker.swift   # 主题色选择器
+│   │   └── FocusMusic/              # 专注音乐组件
+│   └── Settings/                # 设置页面
+│       ├── SettingsView.swift       # 设置主页
+│       ├── FocusSettingsView.swift  # 专注设置
+│       ├── NotificationSettingsView.swift # 通知设置
+│       ├── LanguageSettingsView.swift    # 语言设置
+│       ├── DataManagementView.swift      # 数据管理
+│       └── AboutView.swift          # 关于页面
+├── Managers/                    # 管理器
+│   └── FocusMusicManager.swift  # 白噪音管理
+├── Resources/                   # 资源文件
+│   ├── Audio/                   # 白噪音音频
+│   │   ├── rain.mp3
+│   │   ├── ocean.mp3
+│   │   ├── forest.mp3
+│   │   └── crickets.mp3
+│   ├── zh-Hans.lproj/           # 简体中文
+│   ├── zh-Hant.lproj/           # 繁体中文
+│   ├── en.lproj/                # 英语
+│   ├── ja.lproj/                # 日语
+│   ├── ko.lproj/                # 韩语
+│   ├── de.lproj/                # 德语
+│   └── th.lproj/                # 泰语
+└── Assets.xcassets/             # 资源目录
+    └── AppIcon.appiconset/      # 应用图标
+```
+
+---
+
+## 🌍 国际化
+
+FocusHabit 支持以下语言：
+
+| 语言 | 代码 | 状态 |
+|------|------|------|
+| 简体中文 | zh-Hans | ✅ |
+| 繁体中文 | zh-Hant | ✅ |
+| English | en | ✅ |
+| 日本語 | ja | ✅ |
+| 한국어 | ko | ✅ |
+| Deutsch | de | ✅ |
+| ภาษาไทย | th | ✅ |
+
+### 添加新语言
+
+1. 在 `FocusHabit/Resources/` 下创建新的 `.lproj` 目录
+2. 复制 `en.lproj/Localizable.strings` 到新目录
+3. 翻译所有字符串
+4. 在 `LanguageManager.swift` 中注册新语言
+
+---
+
+## 🎯 未来规划
+
+- [ ] 小组件支持（Widget）
 - [ ] iCloud 数据同步
-- [ ] Apple Watch 配套应用
+- [ ] 成就系统与徽章墙
+- [ ] Apple Watch 支持
 - [ ] 社交分享功能
+- [ ] 更多白噪音选择
 
-## 🤝 贡献指南
+---
+
+## 📄 许可证
+
+本项目采用 [Apache License 2.0](LICENSE) 许可证。
+
+---
+
+## 🤝 贡献
 
 欢迎提交 Issue 和 Pull Request！
 
 1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
 3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 提交 Pull Request
-
-## 📄 开源协议
-
-本项目基于 [Apache License 2.0](LICENSE) 开源。
-
-## 🙏 致谢
-
-- [SF Symbols](https://developer.apple.com/sf-symbols/) - 图标资源
-- [Swift Charts](https://developer.apple.com/documentation/charts) - 图表框架
+5. 打开 Pull Request
 
 ---
 

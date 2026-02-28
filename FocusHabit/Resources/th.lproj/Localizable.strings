@@ -1,0 +1,209 @@
+/* 
+  Localizable.strings (ไทย)
+  FocusHabit
+*/
+
+// MARK: - Common
+"settings" = "การตั้งค่า";
+"cancel" = "ยกเลิก";
+"confirm" = "ยืนยัน";
+"delete" = "ลบ";
+"save" = "บันทึก";
+"done" = "เสร็จสิ้น";
+
+// MARK: - Tab Bar
+"tab_habits" = "นิสัย";
+"tab_statistics" = "สถิติ";
+"tab_focus" = "โฟกัส";
+"tab_settings" = "การตั้งค่า";
+
+// MARK: - Greetings
+"greeting_morning" = "สวัสดีตอนเช้า ☀️";
+"greeting_afternoon" = "สวัสดีตอนบ่าย 🌤️";
+"greeting_evening" = "สวัสดีตอนเย็น 🌙";
+
+// MARK: - Habit List
+"empty_state_title" = "เริ่มต้นการเดินทางสร้างนิสัย";
+"empty_state_subtitle" = "แตะ + ที่มุมขวาบนเพื่อสร้างนิสัยแรกของคุณ";
+"create_habit" = "สร้างนิสัย";
+"habit_count" = "%d นิสัย";
+"check_in_success" = "เช็คอินสำเร็จ!";
+"completion_progress" = "%d/%d ครั้ง";
+"today_completed" = "วันนี้เสร็จแล้ว";
+"today_not_completed" = "วันนี้ยังไม่เสร็จ";
+
+// MARK: - Habit Form
+"select_icon" = "เลือกไอคอน";
+"select_color" = "เลือกสี";
+"delete_habit" = "ลบนิสัย";
+"delete_habit_confirm" = "บันทึกการเช็คอินทั้งหมดของนิสัยนี้จะถูกลบด้วย การดำเนินการนี้ไม่สามารถย้อนกลับได้";
+"habit_name" = "ชื่อนิสัย";
+"habit_name_placeholder" = "ใส่ชื่อนิสัย";
+"target_count" = "เป้าหมายจำนวนครั้ง";
+"basic_info" = "ข้อมูลพื้นฐาน";
+"daily_target" = "เป้าหมายรายวัน: %d ครั้ง";
+"edit_habit" = "แก้ไขนิสัย";
+"new_habit" = "นิสัยใหม่";
+"frequency" = "ความถี่";
+"frequency_daily" = "รายวัน";
+"frequency_weekly" = "รายสัปดาห์";
+"frequency_custom" = "กำหนดเอง";
+
+// MARK: - Statistics
+"statistics_title" = "สถิติ";
+"total_check_ins" = "เช็คอินทั้งหมด";
+"today_progress" = "ความคืบหน้าวันนี้";
+"longest_streak" = "สตรีคยาวสุด";
+"weekly_completion" = "อัตราสัปดาห์";
+"check_in_trend" = "แนวโน้มเช็คอิน";
+"daily_check_ins" = "เช็คอินรายวัน";
+"total_times" = "รวม %d ครั้ง";
+"habit_ranking" = "การจัดอันดับนิสัย";
+"no_habit_data" = "ไม่มีข้อมูลนิสัย";
+"consecutive_days" = "สตรีค %d วัน";
+"times" = "ครั้ง";
+"check_in_calendar" = "ปฏิทินเช็คอิน";
+"less" = "น้อย";
+"more" = "มาก";
+"monthly_total" = "%d ครั้งเดือนนี้";
+"chart_range_week" = "7 วัน";
+"chart_range_month" = "30 วัน";
+"chart_time_range" = "ช่วงเวลา";
+"streak_days" = "%d วัน";
+
+// MARK: - Focus
+"focus_title" = "โฟกัส";
+"focusing" = "กำลังโฟกัส";
+"start_focus" = "เริ่มโฟกัส";
+"pause_focus" = "หยุดชั่วคราว";
+"stop_focus" = "หยุด";
+"continue_focus" = "ดำเนินการต่อ";
+"skip_break" = "ข้าม";
+"linked_habit" = "นิสัยที่เชื่อมโยง";
+"select_habit" = "เลือกนิสัย";
+"today_focus" = "โฟกัสวันนี้";
+"completed_pomodoros" = "โปโมโดโร";
+"focus_progress_not_saved" = "ความคืบหน้าโฟกัสปัจจุบันจะไม่ถูกบันทึก";
+"short_break" = "พักสั้น";
+"long_break" = "พักยาว";
+"stop_focus_alert" = "หยุดโฟกัส?";
+"continue_focusing" = "โฟกัสต่อ";
+"start_break" = "เริ่มพัก";
+"focus_hours_minutes" = "%d ชม. %d นาที";
+"focus_minutes_only" = "%d นาที";
+"phase_completed_title" = "%@ เสร็จสิ้น!";
+"focus_completed_body" = "เก่งมาก! ได้เวลาพักผ่อน ☕️";
+"break_completed_body" = "พักเสร็จแล้ว มาโฟกัสกัน! 💪";
+
+// MARK: - Settings
+"notification_settings" = "การแจ้งเตือน";
+"enabled" = "เปิดใช้งาน";
+"disabled" = "ปิดใช้งาน";
+"focus_settings" = "การตั้งค่าโฟกัส";
+"minutes_format" = "%d นาที";
+"language_settings" = "ภาษา";
+"language_settings_footer" = "อินเตอร์เฟซจะอัปเดตทันทีหลังจากเปลี่ยน";
+"data_management" = "การจัดการข้อมูล";
+"data_management_subtitle" = "ส่งออก, สำรอง, รีเซ็ต";
+"about" = "เกี่ยวกับ";
+"version_info" = "ข้อมูลเวอร์ชัน";
+
+// MARK: - Notification Settings
+"enable_notifications" = "เปิดการแจ้งเตือน";
+"notification_switch" = "สวิตช์การแจ้งเตือน";
+"notification_switch_desc" = "เมื่อเปิดใช้งาน แอปจะเตือนคุณให้เช็คอินตามเวลาที่ตั้งไว้";
+"permission_status" = "สถานะการอนุญาต";
+"reminder_settings" = "การตั้งค่าการเตือน";
+"sound" = "เสียง";
+"vibration" = "การสั่น";
+"notification_permission_hint" = "กรุณาเปิดการอนุญาตการแจ้งเตือนในการตั้งค่าระบบเพื่อรับการเตือนเช็คอิน";
+"permission_not_determined" = "ยังไม่กำหนด";
+"permission_denied" = "ถูกปฏิเสธ";
+"permission_authorized" = "ได้รับอนุญาต";
+"permission_provisional" = "ชั่วคราว";
+"permission_unknown" = "ไม่ทราบ";
+
+// MARK: - Focus Settings
+"focus_duration" = "ระยะเวลาโฟกัส";
+"short_break_duration" = "พักสั้น";
+"long_break_duration" = "พักยาว";
+"duration_settings" = "การตั้งค่าระยะเวลา";
+"pomodoro_tip" = "เทคนิคโปโมโดโร: โฟกัส 25 นาที, พัก 5 นาที";
+"pomodoros_format" = "%d โปโมโดโร";
+"cycle_settings" = "การตั้งค่ารอบ";
+"cycle_settings_desc" = "เข้าสู่ช่วงพักยาวหลังจากครบจำนวนรอบโฟกัสที่ตั้งไว้";
+"auto_start_break" = "เริ่มพักอัตโนมัติ";
+"auto_start_break_desc" = "เริ่มพักอัตโนมัติหลังโฟกัสจบ";
+"auto_start_focus" = "เริ่มโฟกัสอัตโนมัติ";
+"auto_start_focus_desc" = "เริ่มโฟกัสอัตโนมัติหลังพักจบ";
+"automation" = "ระบบอัตโนมัติ";
+"complete_cycle" = "รอบที่สมบูรณ์";
+"long_break_interval" = "ช่วงพักยาว";
+"total_duration" = "ระยะเวลารวม: ~%d นาที (%@ ชม.)";
+"config_preview" = "ตัวอย่างการตั้งค่า";
+
+// MARK: - Components
+"color_ocean_blue" = "น้ำเงินมหาสมุทร";
+"color_vital_orange" = "ส้มสดใส";
+"color_fresh_green" = "เขียวสดใส";
+"color_romantic_purple" = "ม่วงโรแมนติก";
+"color_warm_red" = "แดงอบอุ่น";
+"color_elegant_black" = "ดำหรูหรา";
+"chart_axis_date" = "วันที่";
+"chart_axis_count" = "จำนวน";
+
+// MARK: - Common Actions
+"reset" = "รีเซ็ต";
+"clear" = "ล้าง";
+
+// MARK: - Data Management
+"data_overview" = "ภาพรวมข้อมูล";
+"habit_count_label" = "นิสัย";
+"check_in_records" = "บันทึกเช็คอิน";
+"focus_records" = "บันทึกโฟกัส";
+"export_data" = "ส่งออกข้อมูล";
+"data_export" = "ส่งออกข้อมูล";
+"data_export_desc" = "ส่งออกเป็นรูปแบบ JSON สำหรับสำรองหรือย้ายข้อมูล";
+"reset_settings" = "รีเซ็ตการตั้งค่า";
+"clear_all_data" = "ล้างข้อมูลทั้งหมด";
+"danger_zone" = "โซนอันตราย";
+"danger_zone_desc" = "ข้อมูลไม่สามารถกู้คืนได้หลังจากล้าง กรุณาดำเนินการด้วยความระมัดระวัง";
+"reset_settings_confirm" = "การตั้งค่าทั้งหมดจะถูกรีเซ็ตเป็นค่าเริ่มต้น ดำเนินการต่อหรือไม่?";
+"clear_data_confirm" = "นิสัย บันทึกเช็คอิน และบันทึกโฟกัสทั้งหมดจะถูกลบ การดำเนินการนี้ไม่สามารถย้อนกลับได้!";
+
+// MARK: - About
+"app_description" = "สร้างนิสัยด้วยโฟกัส เพิ่มประสิทธิภาพด้วยโปโมโดโร";
+"features" = "คุณสมบัติ";
+"feature_habit_tracking" = "ติดตามนิสัย";
+"feature_habit_tracking_desc" = "สร้างและจัดการนิสัยประจำวัน";
+"feature_pomodoro" = "ตัวจับเวลาโปโมโดโร";
+"feature_pomodoro_desc" = "รอบโฟกัส-พัก 25/5 นาที";
+"feature_statistics" = "สถิติ";
+"feature_statistics_desc" = "แสดงภาพแนวโน้มการทำนิสัยสำเร็จ";
+"feature_reminder" = "การเตือนอัจฉริยะ";
+"feature_reminder_desc" = "การแจ้งเตือนเช็คอินตามกำหนดเวลา";
+"contact_us" = "ติดต่อเรา";
+"feedback" = "ความคิดเห็น";
+"version_format" = "เวอร์ชัน %@ (%@)";
+"copyright" = "© 2026 FocusHabit. All rights reserved.";
+
+// MARK: - Focus Music
+"focus_music" = "เพลงโฟกัส";
+"focus_music_enabled" = "เปิดเพลง";
+"white_noise" = "เสียงขาว";
+"white_noise_forest" = "ป่า";
+"white_noise_rain" = "ฝน";
+"white_noise_ocean" = "มหาสมุทร";
+"white_noise_crickets" = "จิ้งหรีด";
+"apple_music" = "Apple Music";
+"apple_music_connected" = "เชื่อมต่อแล้ว";
+"apple_music_not_connected" = "ไม่ได้เชื่อมต่อ";
+"apple_music_denied" = "ถูกปฏิเสธการเข้าถึง";
+"apple_music_restricted" = "ถูกจำกัด";
+"apple_music_connect" = "เชื่อมต่อ Apple Music";
+"apple_music_select_playlist" = "เลือกเพลย์ลิสต์";
+"now_playing" = "กำลังเล่น";
+"select_music_source" = "เลือกแหล่งเพลงเพื่อเริ่มเล่น";
+"music_volume" = "ระดับเสียง";
+"stop_music_on_focus_end" = "หยุดเพลงเมื่อโฟกัสจบ";
+"stop_music_on_focus_end_desc" = "เมื่อปิดใช้งาน เพลงจะเล่นต่อหลังจากโฟกัสจบ";

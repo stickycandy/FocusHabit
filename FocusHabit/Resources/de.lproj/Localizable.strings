@@ -1,0 +1,209 @@
+/* 
+  Localizable.strings (Deutsch)
+  FocusHabit
+*/
+
+// MARK: - Common
+"settings" = "Einstellungen";
+"cancel" = "Abbrechen";
+"confirm" = "Bestätigen";
+"delete" = "Löschen";
+"save" = "Speichern";
+"done" = "Fertig";
+
+// MARK: - Tab Bar
+"tab_habits" = "Gewohnheiten";
+"tab_statistics" = "Statistik";
+"tab_focus" = "Fokus";
+"tab_settings" = "Einstellungen";
+
+// MARK: - Greetings
+"greeting_morning" = "Guten Morgen ☀️";
+"greeting_afternoon" = "Guten Tag 🌤️";
+"greeting_evening" = "Guten Abend 🌙";
+
+// MARK: - Habit List
+"empty_state_title" = "Starte deine Gewohnheitsreise";
+"empty_state_subtitle" = "Tippe oben rechts auf +, um deine erste Gewohnheit zu erstellen";
+"create_habit" = "Gewohnheit erstellen";
+"habit_count" = "%d Gewohnheiten";
+"check_in_success" = "Check-in erfolgreich!";
+"completion_progress" = "%d/%d Mal";
+"today_completed" = "Heute erledigt";
+"today_not_completed" = "Heute nicht erledigt";
+
+// MARK: - Habit Form
+"select_icon" = "Symbol auswählen";
+"select_color" = "Farbe auswählen";
+"delete_habit" = "Gewohnheit löschen";
+"delete_habit_confirm" = "Alle Check-in-Einträge für diese Gewohnheit werden ebenfalls gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.";
+"habit_name" = "Gewohnheitsname";
+"habit_name_placeholder" = "Gewohnheitsname eingeben";
+"target_count" = "Zielanzahl";
+"basic_info" = "Grundinfo";
+"daily_target" = "Tagesziel: %d Mal";
+"edit_habit" = "Gewohnheit bearbeiten";
+"new_habit" = "Neue Gewohnheit";
+"frequency" = "Häufigkeit";
+"frequency_daily" = "Täglich";
+"frequency_weekly" = "Wöchentlich";
+"frequency_custom" = "Benutzerdefiniert";
+
+// MARK: - Statistics
+"statistics_title" = "Statistik";
+"total_check_ins" = "Gesamt Check-ins";
+"today_progress" = "Heutiger Fortschritt";
+"longest_streak" = "Längste Serie";
+"weekly_completion" = "Wochenrate";
+"check_in_trend" = "Check-in-Trend";
+"daily_check_ins" = "Tägliche Check-ins";
+"total_times" = "%d Mal insgesamt";
+"habit_ranking" = "Gewohnheits-Ranking";
+"no_habit_data" = "Keine Gewohnheitsdaten";
+"consecutive_days" = "%d Tage Serie";
+"times" = "Mal";
+"check_in_calendar" = "Check-in-Kalender";
+"less" = "Weniger";
+"more" = "Mehr";
+"monthly_total" = "%d Mal diesen Monat";
+"chart_range_week" = "7 Tage";
+"chart_range_month" = "30 Tage";
+"chart_time_range" = "Zeitraum";
+"streak_days" = "%d Tage";
+
+// MARK: - Focus
+"focus_title" = "Fokus";
+"focusing" = "Fokussieren";
+"start_focus" = "Fokus starten";
+"pause_focus" = "Pause";
+"stop_focus" = "Stopp";
+"continue_focus" = "Fortsetzen";
+"skip_break" = "Überspringen";
+"linked_habit" = "Verknüpfte Gewohnheit";
+"select_habit" = "Gewohnheit auswählen";
+"today_focus" = "Heutiger Fokus";
+"completed_pomodoros" = "Pomodoros";
+"focus_progress_not_saved" = "Aktueller Fokus-Fortschritt wird nicht gespeichert";
+"short_break" = "Kurze Pause";
+"long_break" = "Lange Pause";
+"stop_focus_alert" = "Fokus stoppen?";
+"continue_focusing" = "Weiter fokussieren";
+"start_break" = "Pause starten";
+"focus_hours_minutes" = "%d Std. %d Min.";
+"focus_minutes_only" = "%d Min.";
+"phase_completed_title" = "%@ abgeschlossen!";
+"focus_completed_body" = "Großartig! Zeit für eine Pause ☕️";
+"break_completed_body" = "Pause vorbei, lass uns fokussieren! 💪";
+
+// MARK: - Settings
+"notification_settings" = "Benachrichtigungen";
+"enabled" = "Aktiviert";
+"disabled" = "Deaktiviert";
+"focus_settings" = "Fokus-Einstellungen";
+"minutes_format" = "%d Min.";
+"language_settings" = "Sprache";
+"language_settings_footer" = "Die Oberfläche wird sofort nach dem Wechsel aktualisiert";
+"data_management" = "Datenverwaltung";
+"data_management_subtitle" = "Exportieren, sichern, zurücksetzen";
+"about" = "Über";
+"version_info" = "Versioninfo";
+
+// MARK: - Notification Settings
+"enable_notifications" = "Benachrichtigungen aktivieren";
+"notification_switch" = "Benachrichtigungsschalter";
+"notification_switch_desc" = "Wenn aktiviert, erinnert die App dich zur festgelegten Zeit an das Check-in";
+"permission_status" = "Berechtigungsstatus";
+"reminder_settings" = "Erinnerungseinstellungen";
+"sound" = "Ton";
+"vibration" = "Vibration";
+"notification_permission_hint" = "Bitte aktiviere die Benachrichtigungsberechtigungen in den Systemeinstellungen, um Check-in-Erinnerungen zu erhalten";
+"permission_not_determined" = "Nicht festgelegt";
+"permission_denied" = "Abgelehnt";
+"permission_authorized" = "Autorisiert";
+"permission_provisional" = "Vorläufig";
+"permission_unknown" = "Unbekannt";
+
+// MARK: - Focus Settings
+"focus_duration" = "Fokus-Dauer";
+"short_break_duration" = "Kurze Pause";
+"long_break_duration" = "Lange Pause";
+"duration_settings" = "Dauereinstellungen";
+"pomodoro_tip" = "Pomodoro-Technik: 25 Min. Fokus, 5 Min. Pause";
+"pomodoros_format" = "%d Pomodoros";
+"cycle_settings" = "Zykluseinstellungen";
+"cycle_settings_desc" = "Lange Pause nach Abschluss der festgelegten Anzahl von Fokus-Sitzungen";
+"auto_start_break" = "Pause automatisch starten";
+"auto_start_break_desc" = "Pause nach Ende des Fokus automatisch starten";
+"auto_start_focus" = "Fokus automatisch starten";
+"auto_start_focus_desc" = "Fokus nach Ende der Pause automatisch starten";
+"automation" = "Automatisierung";
+"complete_cycle" = "Vollständiger Zyklus";
+"long_break_interval" = "Intervall für lange Pause";
+"total_duration" = "Gesamtdauer: ~%d Min. (%@ Std.)";
+"config_preview" = "Konfigurationsvorschau";
+
+// MARK: - Components
+"color_ocean_blue" = "Ozeanblau";
+"color_vital_orange" = "Vital Orange";
+"color_fresh_green" = "Frisches Grün";
+"color_romantic_purple" = "Romantisches Lila";
+"color_warm_red" = "Warmes Rot";
+"color_elegant_black" = "Elegantes Schwarz";
+"chart_axis_date" = "Datum";
+"chart_axis_count" = "Anzahl";
+
+// MARK: - Common Actions
+"reset" = "Zurücksetzen";
+"clear" = "Löschen";
+
+// MARK: - Data Management
+"data_overview" = "Datenübersicht";
+"habit_count_label" = "Gewohnheiten";
+"check_in_records" = "Check-in-Einträge";
+"focus_records" = "Fokus-Einträge";
+"export_data" = "Daten exportieren";
+"data_export" = "Datenexport";
+"data_export_desc" = "Als JSON-Format für Backup oder Migration exportieren";
+"reset_settings" = "Einstellungen zurücksetzen";
+"clear_all_data" = "Alle Daten löschen";
+"danger_zone" = "Gefahrenbereich";
+"danger_zone_desc" = "Daten können nach dem Löschen nicht wiederhergestellt werden, bitte mit Vorsicht fortfahren";
+"reset_settings_confirm" = "Alle Einstellungen werden auf Standardwerte zurückgesetzt. Fortfahren?";
+"clear_data_confirm" = "Alle Gewohnheiten, Check-in-Einträge und Fokus-Einträge werden gelöscht. Diese Aktion kann nicht rückgängig gemacht werden!";
+
+// MARK: - About
+"app_description" = "Gewohnheiten mit Fokus aufbauen, Effizienz mit Pomodoro steigern";
+"features" = "Funktionen";
+"feature_habit_tracking" = "Gewohnheitsverfolgung";
+"feature_habit_tracking_desc" = "Tägliche Gewohnheiten erstellen und verwalten";
+"feature_pomodoro" = "Pomodoro-Timer";
+"feature_pomodoro_desc" = "25/5 Min. Fokus-Pause-Zyklen";
+"feature_statistics" = "Statistik";
+"feature_statistics_desc" = "Gewohnheits-Abschlusstrends visualisieren";
+"feature_reminder" = "Smarte Erinnerungen";
+"feature_reminder_desc" = "Geplante Check-in-Benachrichtigungen";
+"contact_us" = "Kontakt";
+"feedback" = "Feedback";
+"version_format" = "Version %@ (%@)";
+"copyright" = "© 2026 FocusHabit. Alle Rechte vorbehalten.";
+
+// MARK: - Focus Music
+"focus_music" = "Fokus-Musik";
+"focus_music_enabled" = "Musik aktivieren";
+"white_noise" = "Weißes Rauschen";
+"white_noise_forest" = "Wald";
+"white_noise_rain" = "Regen";
+"white_noise_ocean" = "Ozean";
+"white_noise_crickets" = "Grillen";
+"apple_music" = "Apple Music";
+"apple_music_connected" = "Verbunden";
+"apple_music_not_connected" = "Nicht verbunden";
+"apple_music_denied" = "Zugriff verweigert";
+"apple_music_restricted" = "Eingeschränkt";
+"apple_music_connect" = "Apple Music verbinden";
+"apple_music_select_playlist" = "Playlist auswählen";
+"now_playing" = "Wird abgespielt";
+"select_music_source" = "Wähle eine Musikquelle zum Abspielen";
+"music_volume" = "Lautstärke";
+"stop_music_on_focus_end" = "Musik bei Fokus-Ende stoppen";
+"stop_music_on_focus_end_desc" = "Wenn deaktiviert, wird die Musik nach dem Fokus-Ende weitergespielt";
