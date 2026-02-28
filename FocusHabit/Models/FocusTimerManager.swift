@@ -137,6 +137,11 @@ final class FocusTimerManager {
         sessionStartTime = Date()
         timerState = .running
         startTimer()
+        
+        // 如果是专注阶段开始，恢复之前暂停的音乐
+        if currentPhase == .focus {
+            FocusMusicManager.shared.handleFocusStarted()
+        }
     }
     
     /// 暂停计时
@@ -223,6 +228,12 @@ final class FocusTimerManager {
                 todayFocusSeconds += elapsed
                 saveTodayFocusTime()
             }
+            
+            // 专注结束时处理音乐（停止或暂停）
+            FocusMusicManager.shared.handleFocusEnded()
+        } else {
+            // 休息结束
+            FocusMusicManager.shared.handleBreakEnded()
         }
         
         // 发送通知

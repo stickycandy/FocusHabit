@@ -14,6 +14,8 @@ struct FocusTimerView: View {
     @State private var timerManager = FocusTimerManager()
     @State private var showingHabitPicker = false
     @State private var showingStopAlert = false
+    @State private var showingMusicSheet = false
+    @State private var musicManager = FocusMusicManager.shared
     
     /// 观察 AppSettings 以响应设置变化
     private var settings: AppSettings { AppSettings.shared }
@@ -57,8 +59,16 @@ struct FocusTimerView: View {
             }
             .navigationTitle(L10n.focusTitle)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    musicButton
+                }
+            }
             .sheet(isPresented: $showingHabitPicker) {
                 habitPickerSheet
+            }
+            .sheet(isPresented: $showingMusicSheet) {
+                FocusMusicSheet()
             }
             .alert(L10n.stopFocusAlert, isPresented: $showingStopAlert) {
                 Button(L10n.continueFocusing, role: .cancel) {}
@@ -268,6 +278,27 @@ struct FocusTimerView: View {
             .padding(.vertical, 12)
             .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 12))
+        }
+    }
+    
+    // MARK: - 音乐按钮
+    
+    private var musicButton: some View {
+        Button {
+            showingMusicSheet = true
+        } label: {
+            ZStack {
+                // 播放状态指示
+                if musicManager.isPlaying {
+                    Circle()
+                        .fill(Color.blue.opacity(0.15))
+                        .frame(width: 36, height: 36)
+                }
+                
+                Image(systemName: musicManager.isPlaying ? "music.note" : "music.note.list")
+                    .font(.system(size: 18))
+                    .foregroundStyle(musicManager.isPlaying ? .blue : .primary)
+            }
         }
     }
     

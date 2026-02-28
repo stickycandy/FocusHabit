@@ -10,6 +10,12 @@
 		A1000001 /* FocusHabitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001 /* FocusHabitApp.swift */; };
 		A1000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002 /* ContentView.swift */; };
 		A1000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000003 /* Assets.xcassets */; };
+		A1000070 /* FocusMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000070 /* FocusMusicManager.swift */; };
+		A1000071 /* FocusMusicSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000071 /* FocusMusicSheet.swift */; };
+		A1000080 /* forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2000080 /* forest.mp3 */; };
+		A1000081 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2000081 /* rain.mp3 */; };
+		A1000082 /* ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2000082 /* ocean.mp3 */; };
+		A1000083 /* crickets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2000083 /* crickets.mp3 */; };
 		A1000004 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000004 /* Habit.swift */; };
 		A1000005 /* HabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000005 /* HabitLog.swift */; };
 		A1000006 /* FocusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000006 /* FocusSession.swift */; };
@@ -77,6 +83,12 @@
 		A2000061 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2000062 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Resources/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A2000063 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "Resources/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A2000070 /* FocusMusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusMusicManager.swift; sourceTree = "<group>"; };
+		A2000071 /* FocusMusicSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusMusicSheet.swift; sourceTree = "<group>"; };
+		A2000080 /* forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forest.mp3; sourceTree = "<group>"; };
+		A2000081 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
+		A2000082 /* ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ocean.mp3; sourceTree = "<group>"; };
+		A2000083 /* crickets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crickets.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -95,7 +107,9 @@
 				A2000002 /* ContentView.swift */,
 				A2000041 /* AppIconGenerator.swift */,
 				A3000003 /* Models */,
+				A3000008 /* Managers */,
 				A3000004 /* Views */,
+				A3000009 /* Resources */,
 				A2000003 /* Assets.xcassets */,
 				A2000060 /* Localizable.strings */,
 			);
@@ -163,6 +177,7 @@
 				A2000037 /* HabitRankingView.swift */,
 				A2000038 /* CircularProgressView.swift */,
 				A3000007 /* Extensions */,
+				A3000011 /* FocusMusic */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -173,6 +188,41 @@
 				A2000040 /* Color+Hex.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3000008 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A2000070 /* FocusMusicManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A3000009 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A3000010 /* Audio */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A3000010 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				A2000080 /* forest.mp3 */,
+				A2000081 /* rain.mp3 */,
+				A2000082 /* ocean.mp3 */,
+				A2000083 /* crickets.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		A3000011 /* FocusMusic */ = {
+			isa = PBXGroup;
+			children = (
+				A2000071 /* FocusMusicSheet.swift */,
+			);
+			path = FocusMusic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +291,7 @@
 				A1000006 /* FocusSession.swift in Sources */,
 				A1000007 /* AppSettings.swift in Sources */,
 				A1000008 /* FocusTimerManager.swift in Sources */,
+				A1000070 /* FocusMusicManager.swift in Sources */,
 				A1000010 /* HabitListView.swift in Sources */,
 				A1000011 /* HabitFormView.swift in Sources */,
 				A1000012 /* HabitRowView.swift in Sources */,
@@ -264,6 +315,7 @@
 				A1000041 /* AppIconGenerator.swift in Sources */,
 				A1000050 /* LanguageManager.swift in Sources */,
 				A1000051 /* LanguageSettingsView.swift in Sources */,
+				A1000071 /* FocusMusicSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +328,10 @@
 			files = (
 				A1000003 /* Assets.xcassets in Resources */,
 				A1000060 /* Localizable.strings in Resources */,
+				A1000080 /* forest.mp3 in Resources */,
+				A1000081 /* rain.mp3 in Resources */,
+				A1000082 /* ocean.mp3 in Resources */,
+				A1000083 /* crickets.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +402,7 @@
 				DEVELOPMENT_TEAM = Y78386NB76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "FocusHabit needs access to Apple Music to play background music during your focus sessions.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -374,6 +431,7 @@
 				DEVELOPMENT_TEAM = Y78386NB76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "FocusHabit needs access to Apple Music to play background music during your focus sessions.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -29,6 +29,7 @@ final class AppSettings {
         static let autoStartFocus = "autoStartFocus"
         static let soundEnabled = "soundEnabled"
         static let vibrationEnabled = "vibrationEnabled"
+        static let stopMusicOnFocusEnd = "stopMusicOnFocusEnd"
     }
     
     // MARK: - 存储属性（用于 @Observable 追踪）
@@ -81,6 +82,11 @@ final class AppSettings {
     /// 是否启用振动
     var vibrationEnabled: Bool {
         didSet { defaults.set(vibrationEnabled, forKey: Keys.vibrationEnabled) }
+    }
+    
+    /// 专注结束时停止音乐
+    var stopMusicOnFocusEnd: Bool {
+        didSet { defaults.set(stopMusicOnFocusEnd, forKey: Keys.stopMusicOnFocusEnd) }
     }
     
     // MARK: - 方法
@@ -141,5 +147,8 @@ final class AppSettings {
         // 加载声音与振动设置（默认开启）
         self.soundEnabled = defaults.object(forKey: Keys.soundEnabled) == nil ? true : defaults.bool(forKey: Keys.soundEnabled)
         self.vibrationEnabled = defaults.object(forKey: Keys.vibrationEnabled) == nil ? true : defaults.bool(forKey: Keys.vibrationEnabled)
+        
+        // 加载音乐设置（默认专注结束时停止音乐）
+        self.stopMusicOnFocusEnd = defaults.object(forKey: Keys.stopMusicOnFocusEnd) == nil ? true : defaults.bool(forKey: Keys.stopMusicOnFocusEnd)
     }
 }

@@ -358,4 +358,25 @@ enum L10n {
         manager.localizedString("version_format", version, build)
     }
     static var copyright: String { manager.localizedString("copyright") }
+    
+    // MARK: - 专注音乐
+    static var focusMusic: String { manager.localizedString("focus_music") }
+    static var focusMusicEnabled: String { manager.localizedString("focus_music_enabled") }
+    static var whiteNoise: String { manager.localizedString("white_noise") }
+    static var whiteNoiseForest: String { manager.localizedString("white_noise_forest") }
+    static var whiteNoiseRain: String { manager.localizedString("white_noise_rain") }
+    static var whiteNoiseOcean: String { manager.localizedString("white_noise_ocean") }
+    static var whiteNoiseCrickets: String { manager.localizedString("white_noise_crickets") }
+    static var appleMusic: String { manager.localizedString("apple_music") }
+    static var appleMusicConnected: String { manager.localizedString("apple_music_connected") }
+    static var appleMusicNotConnected: String { manager.localizedString("apple_music_not_connected") }
+    static var appleMusicDenied: String { manager.localizedString("apple_music_denied") }
+    static var appleMusicRestricted: String { manager.localizedString("apple_music_restricted") }
+    static var appleMusicConnect: String { manager.localizedString("apple_music_connect") }
+    static var appleMusicSelectPlaylist: String { manager.localizedString("apple_music_select_playlist") }
+    static var nowPlaying: String { manager.localizedString("now_playing") }
+    static var selectMusicSource: String { manager.localizedString("select_music_source") }
+    static var musicVolume: String { manager.localizedString("music_volume") }
+    static var stopMusicOnFocusEnd: String { manager.localizedString("stop_music_on_focus_end") }
+    static var stopMusicOnFocusEndDesc: String { manager.localizedString("stop_music_on_focus_end_desc") }
 }

@@ -23,6 +23,7 @@ struct FocusSettingsView: View {
     @State private var sessionsUntilLongBreak: Int = AppSettings.shared.sessionsUntilLongBreak
     @State private var autoStartBreaks: Bool = AppSettings.shared.autoStartBreaks
     @State private var autoStartFocus: Bool = AppSettings.shared.autoStartFocus
+    @State private var stopMusicOnFocusEnd: Bool = AppSettings.shared.stopMusicOnFocusEnd
     
     var body: some View {
         Form {
@@ -107,6 +108,18 @@ struct FocusSettingsView: View {
                 }
                 .onChange(of: autoStartFocus) { _, newValue in
                     AppSettings.shared.autoStartFocus = newValue
+                }
+                
+                Toggle(isOn: $stopMusicOnFocusEnd) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(L10n.stopMusicOnFocusEnd)
+                        Text(L10n.stopMusicOnFocusEndDesc)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .onChange(of: stopMusicOnFocusEnd) { _, newValue in
+                    AppSettings.shared.stopMusicOnFocusEnd = newValue
                 }
             } header: {
                 Text(L10n.automation)

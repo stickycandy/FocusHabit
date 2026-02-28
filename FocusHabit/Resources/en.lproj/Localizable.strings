@@ -186,3 +186,24 @@
 "feedback" = "Feedback";
 "version_format" = "Version %@ (%@)";
 "copyright" = "© 2026 FocusHabit. All rights reserved.";
+
+// MARK: - Focus Music
+"focus_music" = "Focus Music";
+"focus_music_enabled" = "Enable Music";
+"white_noise" = "White Noise";
+"white_noise_forest" = "Forest";
+"white_noise_rain" = "Rain";
+"white_noise_ocean" = "Ocean";
+"white_noise_crickets" = "Crickets";
+"apple_music" = "Apple Music";
+"apple_music_connected" = "Connected";
+"apple_music_not_connected" = "Not Connected";
+"apple_music_denied" = "Access Denied";
+"apple_music_restricted" = "Restricted";
+"apple_music_connect" = "Connect Apple Music";
+"apple_music_select_playlist" = "Select Playlist";
+"now_playing" = "Now Playing";
+"select_music_source" = "Select a music source to start playing";
+"music_volume" = "Volume";
+"stop_music_on_focus_end" = "Stop Music on Focus End";
+"stop_music_on_focus_end_desc" = "When disabled, music will continue playing after focus ends";

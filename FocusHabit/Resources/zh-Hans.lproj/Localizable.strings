@@ -186,3 +186,24 @@
 "feedback" = "反馈建议";
 "version_format" = "版本 %@ (%@)";
 "copyright" = "© 2026 FocusHabit. All rights reserved.";
+
+// MARK: - 专注音乐
+"focus_music" = "专注音乐";
+"focus_music_enabled" = "启用音乐";
+"white_noise" = "白噪音";
+"white_noise_forest" = "森林";
+"white_noise_rain" = "雨声";
+"white_noise_ocean" = "海浪";
+"white_noise_crickets" = "虫鸣";
+"apple_music" = "Apple Music";
+"apple_music_connected" = "已连接";
+"apple_music_not_connected" = "未连接";
+"apple_music_denied" = "已拒绝授权";
+"apple_music_restricted" = "受限";
+"apple_music_connect" = "连接 Apple Music";
+"apple_music_select_playlist" = "选择播放列表";
+"now_playing" = "正在播放";
+"select_music_source" = "选择音乐来源开始播放";
+"music_volume" = "音量";
+"stop_music_on_focus_end" = "专注结束时停止音乐";
+"stop_music_on_focus_end_desc" = "关闭后，专注结束时音乐将继续播放";
