@@ -55,7 +55,7 @@ enum StatisticsHelper {
         }
         
         // 计算本周已过天数
-        let daysPassed = calendar.dateComponents([.day], from: weekStart, to: today).day ?? 0 + 1
+        let daysPassed = (calendar.dateComponents([.day], from: weekStart, to: today).day ?? 0) + 1
         let actualDays = min(max(daysPassed, 1), 7)
         
         // 应完成次数 = 习惯数 × 已过天数

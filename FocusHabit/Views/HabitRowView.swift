@@ -15,15 +15,6 @@ struct HabitRowView: View {
     let habit: Habit
     let onCheckIn: () -> Void
     
-    /// 今日是否已完成
-    private var isCompletedToday: Bool {
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
-        return habit.logs.contains { log in
-            calendar.isDate(log.completedAt, inSameDayAs: today)
-        }
-    }
-    
     /// 今日完成次数
     private var todayCompletionCount: Int {
         let calendar = Calendar.current
@@ -31,6 +22,11 @@ struct HabitRowView: View {
         return habit.logs.filter { log in
             calendar.isDate(log.completedAt, inSameDayAs: today)
         }.count
+    }
+    
+    /// 今日是否达到目标
+    private var isCompletedToday: Bool {
+        todayCompletionCount >= habit.targetCount
     }
     
     /// 今日完成状态文本

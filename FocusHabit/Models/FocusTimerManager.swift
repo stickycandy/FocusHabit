@@ -78,6 +78,7 @@ final class FocusTimerManager {
     private var timer: Timer?
     private var settings: AppSettings { AppSettings.shared }
     private var sessionStartTime: Date?
+    private var pendingAutoStartToken: UUID?
     
     // MARK: - 计算属性
     
@@ -128,8 +129,10 @@ final class FocusTimerManager {
     
     /// 开始计时
     func start() {
+        cancelPendingAutoStart()
         guard timerState != .running else { return }
         
+        let isFreshPhaseStart = timerState == .idle || timerState == .completed
         if timerState == .idle || timerState == .completed {
             remainingSeconds = totalSeconds
         }
@@ -139,13 +142,14 @@ final class FocusTimerManager {
         startTimer()
         
         // 如果是专注阶段开始，恢复之前暂停的音乐
-        if currentPhase == .focus {
+        if currentPhase == .focus, isFreshPhaseStart {
             FocusMusicManager.shared.handleFocusStarted()
         }
     }
     
     /// 暂停计时
     func pause() {
+        cancelPendingAutoStart()
         guard timerState == .running else { return }
         timerState = .paused
         stopTimer()
@@ -160,6 +164,7 @@ final class FocusTimerManager {
     
     /// 恢复计时
     func resume() {
+        cancelPendingAutoStart()
         guard timerState == .paused else { return }
         sessionStartTime = Date()
         timerState = .running
@@ -168,6 +173,7 @@ final class FocusTimerManager {
     
     /// 停止并重置
     func stop() {
+        cancelPendingAutoStart()
         stopTimer()
         
         // 累计已专注时间
@@ -182,6 +188,7 @@ final class FocusTimerManager {
     
     /// 跳过当前阶段
     func skip() {
+        cancelPendingAutoStart()
         stopTimer()
         moveToNextPhase()
     }
@@ -244,10 +251,7 @@ final class FocusTimerManager {
         
         // 自动进入下一阶段
         if shouldAutoStart() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                self?.moveToNextPhase()
-                self?.start()
-            }
+            scheduleAutoStart()
         }
     }
     
@@ -283,6 +287,24 @@ final class FocusTimerManager {
         case .shortBreak, .longBreak:
             return settings.autoStartFocus
         }
+    }
+    
+    private func scheduleAutoStart() {
+        let token = UUID()
+        pendingAutoStartToken = token
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            guard self.pendingAutoStartToken == token, self.timerState == .completed else { return }
+            
+            self.pendingAutoStartToken = nil
+            self.moveToNextPhase()
+            self.start()
+        }
+    }
+    
+    private func cancelPendingAutoStart() {
+        pendingAutoStartToken = nil
     }
     
     private func sendCompletionNotification() {

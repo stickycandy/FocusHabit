@@ -110,6 +110,7 @@ struct NotificationSettingsView: View {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             DispatchQueue.main.async {
                 self.notificationStatus = settings.authorizationStatus
+                AppSettings.shared.syncDailyReminderNotification()
             }
         }
     }
@@ -120,6 +121,8 @@ struct NotificationSettingsView: View {
                 checkNotificationStatus()
                 if !granted {
                     showingPermissionAlert = true
+                } else {
+                    AppSettings.shared.syncDailyReminderNotification()
                 }
             }
         }

@@ -7,10 +7,12 @@
 
 import Foundation
 import SwiftUI
+import UserNotifications
 
 /// 应用设置管理器
 @Observable
 final class AppSettings {
+    private static let dailyReminderIdentifier = "FocusHabit.dailyReminder"
     
     // MARK: - Singleton
     static let shared = AppSettings()
@@ -36,12 +38,18 @@ final class AppSettings {
     
     /// 是否启用通知
     var notificationsEnabled: Bool {
-        didSet { defaults.set(notificationsEnabled, forKey: Keys.notificationsEnabled) }
+        didSet {
+            defaults.set(notificationsEnabled, forKey: Keys.notificationsEnabled)
+            syncDailyReminderNotification()
+        }
     }
     
     /// 每日提醒时间
     var dailyReminderTime: Date {
-        didSet { defaults.set(dailyReminderTime.timeIntervalSince1970, forKey: Keys.dailyReminderTime) }
+        didSet {
+            defaults.set(dailyReminderTime.timeIntervalSince1970, forKey: Keys.dailyReminderTime)
+            syncDailyReminderNotification()
+        }
     }
     
     /// 专注时长（分钟），默认 25
@@ -76,7 +84,10 @@ final class AppSettings {
     
     /// 是否启用提示音
     var soundEnabled: Bool {
-        didSet { defaults.set(soundEnabled, forKey: Keys.soundEnabled) }
+        didSet {
+            defaults.set(soundEnabled, forKey: Keys.soundEnabled)
+            syncDailyReminderNotification()
+        }
     }
     
     /// 是否启用振动
@@ -150,5 +161,41 @@ final class AppSettings {
         
         // 加载音乐设置（默认专注结束时停止音乐）
         self.stopMusicOnFocusEnd = defaults.object(forKey: Keys.stopMusicOnFocusEnd) == nil ? true : defaults.bool(forKey: Keys.stopMusicOnFocusEnd)
+        
+        syncDailyReminderNotification()
+    }
+    
+    func syncDailyReminderNotification() {
+        let center = UNUserNotificationCenter.current()
+        let notificationsEnabled = self.notificationsEnabled
+        let dailyReminderTime = self.dailyReminderTime
+        let soundEnabled = self.soundEnabled
+        
+        center.getNotificationSettings { settings in
+            let isAuthorized = settings.authorizationStatus == .authorized ||
+                settings.authorizationStatus == .provisional ||
+                settings.authorizationStatus == .ephemeral
+            
+            guard notificationsEnabled, isAuthorized else {
+                center.removePendingNotificationRequests(withIdentifiers: [Self.dailyReminderIdentifier])
+                return
+            }
+            
+            let content = UNMutableNotificationContent()
+            content.title = LanguageManager.shared.localizedString("feature_reminder")
+            content.body = LanguageManager.shared.localizedString("notification_switch_desc")
+            content.sound = soundEnabled ? .default : nil
+            
+            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: dailyReminderTime)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            let request = UNNotificationRequest(
+                identifier: Self.dailyReminderIdentifier,
+                content: content,
+                trigger: trigger
+            )
+            
+            center.removePendingNotificationRequests(withIdentifiers: [Self.dailyReminderIdentifier])
+            center.add(request)
+        }
     }
 }

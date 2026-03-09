@@ -10,12 +10,14 @@ import SwiftData
 
 /// 专注计时器主页面
 struct FocusTimerView: View {
+    @Environment(\.modelContext) private var modelContext
     @Query private var habits: [Habit]
     @State private var timerManager = FocusTimerManager()
     @State private var showingHabitPicker = false
     @State private var showingStopAlert = false
     @State private var showingMusicSheet = false
     @State private var musicManager = FocusMusicManager.shared
+    @State private var activeFocusSession: FocusSession?
     
     /// 观察 AppSettings 以响应设置变化
     private var settings: AppSettings { AppSettings.shared }
@@ -77,6 +79,9 @@ struct FocusTimerView: View {
                 }
             } message: {
                 Text(L10n.focusProgressNotSaved)
+            }
+            .onChange(of: timerManager.timerState) { oldState, newState in
+                handleTimerStateChange(from: oldState, to: newState)
             }
         }
     }
@@ -369,6 +374,46 @@ struct FocusTimerView: View {
             }
         }
         .presentationDetents([.medium])
+    }
+    
+    private func handleTimerStateChange(from oldState: TimerState, to newState: TimerState) {
+        if newState == .running, timerManager.currentPhase == .focus, activeFocusSession == nil {
+            startFocusSession()
+            return
+        }
+        
+        if newState == .completed, timerManager.currentPhase == .focus {
+            completeFocusSession()
+            return
+        }
+        
+        if newState == .idle, activeFocusSession != nil, oldState != .completed {
+            cancelFocusSession()
+        }
+    }
+    
+    private func startFocusSession() {
+        let session = FocusSession(
+            duration: settings.focusDuration * 60,
+            relatedHabit: linkedHabit
+        )
+        modelContext.insert(session)
+        activeFocusSession = session
+        try? modelContext.save()
+    }
+    
+    private func completeFocusSession() {
+        guard let session = activeFocusSession else { return }
+        session.complete()
+        activeFocusSession = nil
+        try? modelContext.save()
+    }
+    
+    private func cancelFocusSession() {
+        guard let session = activeFocusSession else { return }
+        session.cancel()
+        activeFocusSession = nil
+        try? modelContext.save()
     }
 }
 
